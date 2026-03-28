@@ -3,6 +3,30 @@ import json
 import uuid
 import random
 
+
+def getPossibleDepartments():
+    return ["CSC", "ECE", "ART", "MUS", "GEO"]
+
+# Returns a tuple (departmentName, departmentIndex)
+def getRandomWeighedDepartment():
+
+    randomIndex = random.randint(1, 100)
+
+    # The end num is not included in the range. Ex: Range(1,5) would only include 1,2,3,4
+    if randomIndex in range(1,50):
+        return ("CSC", 0)
+    elif randomIndex in range(50,70):
+        return ("ECE", 1)
+    elif randomIndex in range(70,80):
+        return ("ART", 2)
+    elif randomIndex in range(80,95):
+        return ("MUS", 3)
+    elif randomIndex in range(95,101):
+        return ("GEO", 4)
+    
+    raise ValueError
+
+
 def generateNewCourses(outputName:str, numToGenerate:int):
 
     if not outputName.endswith(".json"):
@@ -13,17 +37,30 @@ def generateNewCourses(outputName:str, numToGenerate:int):
         print("Exiting...")
         return
 
-    allCourses = {
-        "courses": []
+    overallJSON = {
+        "departments": []
     }
 
+    possibleDepartments = getPossibleDepartments()
+    for i in range(len(possibleDepartments)):
+
+        departmentRecord = {
+            "name":  possibleDepartments[i],
+            "courses": []
+        }
+        overallJSON["departments"].append(departmentRecord)
+
+
     for _ in range(numToGenerate):
+        ranDepartmentIndex = getRandomWeighedDepartment()[1]
+
         courseRecord = {
             "courseID": str(uuid.uuid4())
         }
-        allCourses["courses"].append(courseRecord)
 
-    jsonEncode = json.dumps(allCourses, indent=4)
+        overallJSON["departments"][ranDepartmentIndex]["courses"].append(courseRecord)
+
+    jsonEncode = json.dumps(overallJSON, indent=4)
 
     with open(outputName, "w") as file:
             file.write(jsonEncode)
@@ -37,32 +74,57 @@ def generateNewStudents(existingCourses:str, outputName:str, numToGenerate:int):
         print("Exiting...")
         return
     
+    if os.path.exists(outputName):
+        print("Error - A generated student dataset already exists by that name")
+        print("Exiting...")
+        return
+    
     with open(existingCourses, "r") as courseFile:
         courseData = json.load(courseFile)
 
-    listedCourses = courseData["courses"]
+    listedDepartments = courseData["departments"]
 
-    numCourses = len(listedCourses)
-
-    allStudents = {
+    overallJSON = {
         "students": []
     }
 
     for _ in range(numToGenerate):
+
+        studentMajor = getRandomWeighedDepartment()
+
         studentRecord = {
             "studentID": str(uuid.uuid4()),
+            "major": studentMajor[0],
             "enrolledCourses": []
         }
-        for _ in range(5):
+        for i in range(random.randint(4,6)):
+
+            departmentToPullFrom = studentMajor
+
+            # 2/10 chance that the student chooses a course from a diff department
+            chooseRandDepartment = random.randint(1,10)
+            if chooseRandDepartment >= 8:
+                departmentToPullFrom = getRandomWeighedDepartment()
+
+            numCourses = len(listedDepartments[departmentToPullFrom[1]]["courses"])
+            while numCourses == 0:
+                # No courses were generated for this department. Student must choose a diff one
+                departmentToPullFrom = getRandomWeighedDepartment()
+                numCourses = len(listedDepartments[departmentToPullFrom[1]]["courses"])
+            
 
             randomIndex = random.randint(0, numCourses-1)
-            randomCourse = listedCourses[randomIndex]
+            randomCourse = listedDepartments[departmentToPullFrom[1]]["courses"][randomIndex]
             randomCourseID = randomCourse["courseID"]
 
-            studentRecord["enrolledCourses"].append(randomCourseID)
-        allStudents["students"].append(studentRecord)
+            if randomCourseID not in studentRecord["enrolledCourses"]:
+                studentRecord["enrolledCourses"].append(randomCourseID)
+            else:
+                i = i - 1 
+                # If already enrolled in this course, adjust the loop index back down so it'll do it again w/o affecting overall course count
+        overallJSON["students"].append(studentRecord)
     
-    jsonEncode = json.dumps(allStudents, indent=4)
+    jsonEncode = json.dumps(overallJSON, indent=4)
 
     with open(outputName, "w") as file:
             file.write(jsonEncode)
