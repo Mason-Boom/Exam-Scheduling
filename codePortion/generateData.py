@@ -97,7 +97,10 @@ def generateNewStudents(existingCourses:str, outputName:str, numToGenerate:int):
             "major": studentMajor[0],
             "enrolledCourses": []
         }
-        for i in range(random.randint(4,6)):
+
+        enrolledCount = 0
+        targetEnrolledCount = random.randint(4,6)
+        while enrolledCount < targetEnrolledCount:
 
             departmentToPullFrom = studentMajor
 
@@ -119,9 +122,8 @@ def generateNewStudents(existingCourses:str, outputName:str, numToGenerate:int):
 
             if randomCourseID not in studentRecord["enrolledCourses"]:
                 studentRecord["enrolledCourses"].append(randomCourseID)
-            else:
-                i = i - 1 
-                # If already enrolled in this course, adjust the loop index back down so it'll do it again w/o affecting overall course count
+                enrolledCount += 1 # Only increment when a unique course is added
+        
         overallJSON["students"].append(studentRecord)
     
     jsonEncode = json.dumps(overallJSON, indent=4)
