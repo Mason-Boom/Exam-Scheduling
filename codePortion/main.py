@@ -1,5 +1,5 @@
-from generateData import mainGenerate
-from runAlgorithm import mainRunAlgorithm
+from generate_data import mainGenerate
+from run_algorithm import mainRunAlgorithm
 
 def main():
 
@@ -13,6 +13,7 @@ def main():
         print("2. Run An Exam Scheduling Algorithm")
         print("3. Exit")
 
+        print("")
         choice = int(input(""))
 
         match choice:
