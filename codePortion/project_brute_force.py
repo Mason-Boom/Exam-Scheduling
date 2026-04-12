@@ -46,8 +46,10 @@ def removeConflicts():
     for schedule in master_schedule_list:
         if hasConflict(schedule):
             improper_schedules.append(schedule)
+            print(f"Appended Improper Schedule - {schedule}")
     for schedule in improper_schedules:
         master_schedule_list.remove(schedule)
+        print(f"Removed Improper Schedule - {schedule}")
                             
 
 def hasConflict(schedule): #TODO: Fix this so that it checks whether a student has two exams at the same time, not the other way around

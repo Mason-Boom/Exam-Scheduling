@@ -99,7 +99,8 @@ def generateNewStudents(existingCourses:str, outputName:str, numToGenerate:int):
         }
 
         enrolledCount = 0
-        targetEnrolledCount = random.randint(4,6)
+        # targetEnrolledCount = random.randint(4,6)
+        targetEnrolledCount = 4
         while enrolledCount < targetEnrolledCount:
 
             departmentToPullFrom = studentMajor
