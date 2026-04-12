@@ -30,10 +30,10 @@ def mainRunAlgorithm():
         algorithmChoice = int(input(""))
 
     executables = {
-        1: "./alg_ binaries/bf",
-        2: "./alg_ binaries/gr",
-        3: "./alg_ binaries/gc",
-        4: "./alg_ binaries/ga",
+        1: "./alg_binaries/bf",
+        2: "./alg_binaries/gr",
+        3: "./alg_binaries/gc",
+        4: "./alg_binaries/ga",
     }
     executable = executables[algorithmChoice]
 
