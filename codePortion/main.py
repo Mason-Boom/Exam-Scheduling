@@ -7,7 +7,7 @@ def main():
 
     while choice != 3:
 
-        print("------------ CSC 2400 Exam Scheduling Project ------------")
+        print("------------ Exam Scheduling Algorithms ------------")
         print("What would you like to do?")
         print("1. Generate New Data")
         print("2. Run An Exam Scheduling Algorithm")
