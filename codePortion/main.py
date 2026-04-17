@@ -9,11 +9,10 @@ def main():
 
         print("------------ Exam Scheduling Algorithms ------------")
         print("What would you like to do?")
-        print("1. Generate New Data")
-        print("2. Run An Exam Scheduling Algorithm")
-        print("3. Exit")
+        print("\t1. Generate New Data")
+        print("\t2. Run An Exam Scheduling Algorithm")
+        print("\t3. Exit")
 
-        print("")
         choice = int(input(""))
 
         match choice:
