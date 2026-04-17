@@ -16,26 +16,26 @@ def mainRunAlgorithm():
         algorithmChoice = int(input(""))
 
     systemChoice = 0
-    while systemChoice not in range (1, 2):
+    while systemChoice not in range (1, 3):
         print("")
         print("Which system are you using?")
         print("\t1. Windows")
         print("\t2. Mac/Linux")
         systemChoice = int(input("Enter 1 or 2: "))
-    
-    if systemChoice == 2:
-        executables = {
-            1: "./codePortion/alg_binaries/bf",
-            2: "./codePortion/alg_binaries/gr",
-            3: "./codePortion/alg_binaries/gc",
-            4: "./codePortion/alg_binaries/ga",
-        }
-    else:
+
+    if systemChoice == 1:
         executables = {
             1: "./codePortion/alg_binaries/bf.exe",
             2: "./codePortion/alg_binaries/gr.exe",
             3: "./codePortion/alg_binaries/gc.exe",
             4: "./codePortion/alg_binaries/ga.exe",
+        }
+    else:
+        executables = {
+            1: "./codePortion/alg_binaries/bf",
+            2: "./codePortion/alg_binaries/gr",
+            3: "./codePortion/alg_binaries/gc",
+            4: "./codePortion/alg_binaries/ga",
         }
 
     executable = executables[algorithmChoice]
