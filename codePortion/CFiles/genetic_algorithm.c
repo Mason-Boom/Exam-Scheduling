@@ -13,7 +13,7 @@
  *   locations file → { "locations": [ "RoomA", "RoomB", ... ] }
  *
  * Compile:
- *   gcc -O2 -o exam_scheduler_ga exam_scheduler_ga.c cJSON.c -lm
+ *   gcc -O2 -o ../alg_binaries/ga genetic_algorithm.c cJSON.c -lm
  */
 
 #include <stdio.h>
@@ -23,34 +23,36 @@
 #include <time.h>
 #include "cJSON.h"
 
-/* ─── tuneable string limits ───────────────────────────────────────────── */
+// ─── String limits ────────────────────────────────────────────────────
 #define MAX_DAY_LEN   8
 #define MAX_TIME_LEN  32
 #define MAX_LOC_LEN   128
 #define MAX_ID_LEN    64
 
-/* ─── GA hyper-parameters ──────────────────────────────────────────────── */
-/* Adjust these to trade off quality vs. runtime.
- *
- *  More courses  → raise POPULATION_SIZE and / or NUM_GENERATIONS.
- *  MUTATION_RATE is per-gene, so ~4 % of all genes flip each generation.
- *  ELITISM_COUNT top chromosomes are copied unchanged to preserve the best.
- *  TOURNAMENT_SIZE controls selection pressure (higher = greedier).
- */
-#define POPULATION_SIZE  1000
-#define NUM_GENERATIONS  1000
-#define MUTATION_RATE    0.04   /* per-gene probability of re-randomisation */
-#define ELITISM_COUNT    10     /* top N survive each generation unaltered   */
-#define TOURNAMENT_SIZE  5      /* candidates evaluated per tournament pick  */
+// ─── GA alg-parameters ────────────────────────────────────────────────
+// Adjust these to trade off quality vs. runtime.
 
-/* Base fitness — penalties are subtracted from this */
+// Base Fitness - penalties are subtracted from this
 #define BASE_FITNESS             10000
 #define STUDENT_CONFLICT_PENALTY   100   /* two exams same (day,time) for a student */
 #define ROOM_CONFLICT_PENALTY       50   /* two exams in the exact same (day,time,room) */
 
+//  Evolution parameters - Either POPULATION_SIZE or NUM_GENERATIONS should grow as the number of courses grows
+//
+//  POPULATION_SIZE is the size for the population for every generation
+//  MUTATION_RATE is per-gene, so ~4 % of all genes flip each generation / per-gene probability of re-randomisation.
+//  ELITISM_COUNT top chromosomes are copied unchanged to preserve the best / top N survive each generation unaltered.
+//  TOURNAMENT_SIZE controls selection pressure (higher = greedier) / candidates evaluated per tournament pick.
+//
+int POPULATION_SIZE = 1000;
+int NUM_GENERATIONS = 1000;
+double MUTATION_RATE = 0.04;
+int ELITISM_COUNT = 10;
+int TOURNAMENT_SIZE = 5;
+
 /* ─── data structures ──────────────────────────────────────────────────── */
 
-typedef struct {
+    typedef struct {
     char day     [MAX_DAY_LEN ];
     char time    [MAX_TIME_LEN];
     char location[MAX_LOC_LEN ];
@@ -300,6 +302,50 @@ int main(void)
     if (!fgets(save_file, sizeof save_file, stdin)) return 1;
     save_file[strcspn(save_file, "\n")] = '\0';
     snprintf(save_path, sizeof save_path, "./codePortion/Data/Schedules/%s", save_file);
+
+    char param_choice[8];
+    printf("\nWould you like to adjust the genetic algorithm parameters? (Y/N): ");
+    if (!fgets(param_choice, sizeof param_choice, stdin)) return 1;
+
+    if (param_choice[0] == 'Y' || param_choice[0] == 'y') {
+        char buf[64];
+
+        printf("\n  Press Enter to keep the default value shown in [brackets].\n\n");
+
+        /* POPULATION_SIZE */
+        printf("  Population size [%d]: ", POPULATION_SIZE);
+        if (!fgets(buf, sizeof buf, stdin)) return 1;
+        if (buf[0] != '\n') POPULATION_SIZE = atoi(buf);
+
+        /* NUM_GENERATIONS */
+        printf("  Number of generations [%d]: ", NUM_GENERATIONS);
+        if (!fgets(buf, sizeof buf, stdin)) return 1;
+        if (buf[0] != '\n') NUM_GENERATIONS = atoi(buf);
+
+        /* MUTATION_RATE */
+        printf("  Mutation rate [%.2f]: ", MUTATION_RATE);
+        if (!fgets(buf, sizeof buf, stdin)) return 1;
+        if (buf[0] != '\n') MUTATION_RATE = atof(buf);
+
+        /* ELITISM_COUNT */
+        printf("  Elitism count [%d]: ", ELITISM_COUNT);
+        if (!fgets(buf, sizeof buf, stdin)) return 1;
+        if (buf[0] != '\n') ELITISM_COUNT = atoi(buf);
+
+        /* TOURNAMENT_SIZE */
+        printf("  Tournament size [%d]: ", TOURNAMENT_SIZE);
+        if (!fgets(buf, sizeof buf, stdin)) return 1;
+        if (buf[0] != '\n') TOURNAMENT_SIZE = atoi(buf);
+
+        printf("\n  Parameters updated.\n");
+    }
+
+    printf("\n  Running with parameters:\n");
+    printf("    POPULATION_SIZE : %d\n",   POPULATION_SIZE);
+    printf("    NUM_GENERATIONS : %d\n",   NUM_GENERATIONS);
+    printf("    MUTATION_RATE   : %.4f\n", MUTATION_RATE);
+    printf("    ELITISM_COUNT   : %d\n",   ELITISM_COUNT);
+    printf("    TOURNAMENT_SIZE : %d\n\n", TOURNAMENT_SIZE);
 
     /* Hard-coded days and timeslots — identical to both Python and C backtracker */
     const char *days[]      = {"M", "T", "W", "R", "F"};
