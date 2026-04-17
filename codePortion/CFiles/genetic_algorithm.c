@@ -281,25 +281,25 @@ int main(void)
     char students_file[256], exam_file[256], space_file[256], save_file[256];
     char students_path[512], exam_path[512], space_path[512], save_path[512];
 
-    printf("Input students json file (e.g., GAStudents.json): ");
+    printf("Input students json file (e.g., students.json): ");
     if (!fgets(students_file, sizeof students_file, stdin)) return 1;
     students_file[strcspn(students_file, "\n")] = '\0';
-    snprintf(students_path, sizeof students_path, "../Data/Students/%s", students_file);
+    snprintf(students_path, sizeof students_path, "./codePortion/Data/Students/%s", students_file);
 
-    printf("Input exam json file (e.g., GACourses.json): ");
+    printf("Input exam json file (e.g., courses.json): ");
     if (!fgets(exam_file, sizeof exam_file, stdin)) return 1;
     exam_file[strcspn(exam_file, "\n")] = '\0';
-    snprintf(exam_path, sizeof exam_path, "../Data/Courses/%s", exam_file);
+    snprintf(exam_path, sizeof exam_path, "./codePortion/Data/Courses/%s", exam_file);
 
-    printf("Input file for locations (e.g., BFLocations.json): ");
+    printf("Input file for locations (e.g., locations.json): ");
     if (!fgets(space_file, sizeof space_file, stdin)) return 1;
     space_file[strcspn(space_file, "\n")] = '\0';
-    snprintf(space_path, sizeof space_path, "../Data/Locations/%s", space_file);
+    snprintf(space_path, sizeof space_path, "./codePortion/Data/Locations/%s", space_file);
 
-    printf("Input file to save results (e.g., GAOutput.json): ");
+    printf("Input file to save results (e.g., output.json): ");
     if (!fgets(save_file, sizeof save_file, stdin)) return 1;
     save_file[strcspn(save_file, "\n")] = '\0';
-    snprintf(save_path, sizeof save_path, "../Data/Schedules/%s", save_file);
+    snprintf(save_path, sizeof save_path, "./codePortion/Data/Schedules/%s", save_file);
 
     /* Hard-coded days and timeslots — identical to both Python and C backtracker */
     const char *days[]      = {"M", "T", "W", "R", "F"};

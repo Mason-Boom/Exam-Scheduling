@@ -255,25 +255,25 @@ int main(void)
     char students_file[256], exam_file[256], space_file[256], save_file[256];
     char students_path[512], exam_path[512], space_path[512], save_path[512];
 
-    printf("Input students json file (just filename, will look in ../Data/Students): ");
+    printf("Input students json file (just filename, will look in Data/Students): ");
     if (!fgets(students_file, sizeof(students_file), stdin)) return 1;
     students_file[strcspn(students_file, "\n")] = '\0';
-    snprintf(students_path, sizeof(students_path), "../Data/Students/%s", students_file);
+    snprintf(students_path, sizeof(students_path), "./codePortion/Data/Students/%s", students_file);
 
-    printf("Input exam json file (just filename, will look in ../Data/Courses): ");
+    printf("Input exam json file (just filename, will look in Data/Courses): ");
     if (!fgets(exam_file, sizeof(exam_file), stdin)) return 1;
     exam_file[strcspn(exam_file, "\n")] = '\0';
-    snprintf(exam_path, sizeof(exam_path), "../Data/Courses/%s", exam_file);
+    snprintf(exam_path, sizeof(exam_path), "./codePortion/Data/Courses/%s", exam_file);
 
-    printf("Input file for locations (just filename, will look in ../Data/Locations): ");
+    printf("Input file for locations (just filename, will look in Data/Locations): ");
     if (!fgets(space_file, sizeof(space_file), stdin)) return 1;
     space_file[strcspn(space_file, "\n")] = '\0';
-    snprintf(space_path, sizeof(space_path), "../Data/Locations/%s", space_file);
+    snprintf(space_path, sizeof(space_path), "./codePortion/Data/Locations/%s", space_file);
 
-    printf("Input file to save results (just filename, will be saved in ../Data/Schedules): ");
+    printf("Input file to save results (just filename, will be saved in Data/Schedules): ");
     if (!fgets(save_file, sizeof(save_file), stdin)) return 1;
     save_file[strcspn(save_file, "\n")] = '\0';
-    snprintf(save_path, sizeof(save_path), "../Data/Schedules/%s", save_file);
+    snprintf(save_path, sizeof(save_path), "./codePortion/Data/Schedules/%s", save_file);
 
     /* Hard-coded days / timeslots — identical to the Python version */
     char *days[]      = {"M", "T", "W", "R", "F"};

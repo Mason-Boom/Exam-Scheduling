@@ -370,25 +370,25 @@ int main(void) {
     char students_path[1024], exams_path[1024], locations_path[1024], save_path[1024];
     clock_t generation_start, generation_end;
 
-    printf("Input students json file (just filename, will look in ../Data/Students): ");
+    printf("Input students json file (just filename, will look in Data/Students): ");
     if (!fgets(students_file, sizeof(students_file), stdin)) return 1;
     trim_newline(students_file);
-    snprintf(students_path, sizeof(students_path), "../Data/Students/%s", students_file);
+    snprintf(students_path, sizeof(students_path), "./codePortion/Data/Students/%s", students_file);
 
-    printf("Input exam json file (just filename, will look in ../Data/Courses): ");
+    printf("Input exam json file (just filename, will look in Data/Courses): ");
     if (!fgets(exams_file, sizeof(exams_file), stdin)) return 1;
     trim_newline(exams_file);
-    snprintf(exams_path, sizeof(exams_path), "../Data/Courses/%s", exams_file);
+    snprintf(exams_path, sizeof(exams_path), "./codePortion/Data/Courses/%s", exams_file);
 
-    printf("Input file for locations (just filename, will look in ../Data/Locations): ");
+    printf("Input file for locations (just filename, will look in Data/Locations): ");
     if (!fgets(locations_file, sizeof(locations_file), stdin)) return 1;
     trim_newline(locations_file);
-    snprintf(locations_path, sizeof(locations_path), "../Data/Locations/%s", locations_file);
+    snprintf(locations_path, sizeof(locations_path), "./codePortion/Data/Locations/%s", locations_file);
 
-    printf("Input file to save results (just filename, will be saved in ../Data/Schedules): ");
+    printf("Input file to save results (just filename, will be saved in Data/Schedules): ");
     if (!fgets(save_file, sizeof(save_file), stdin)) return 1;
     trim_newline(save_file);
-    snprintf(save_path, sizeof(save_path), "../Data/Schedules/%s", save_file);
+    snprintf(save_path, sizeof(save_path), "./codePortion/Data/Schedules/%s", save_file);
 
     char* students_json  = read_entire_file(students_path);
     char* exams_json     = read_entire_file(exams_path);

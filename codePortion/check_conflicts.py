@@ -3,8 +3,8 @@ import sys
 from collections import defaultdict
 
 def load_json(path):
-    with open(path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+    schedule_path = os.path.abspath(os.path.join(folder, "../Data/Schedules", schedule_file))
+    students_path = os.path.abspath(os.path.join(folder, "../Data/Students", students_file))
 
 def main(schedule_path, students_path):
     # Load schedule and students
@@ -60,8 +60,8 @@ def main(schedule_path, students_path):
 if __name__ == "__main__":
     import os
     folder = os.path.dirname(os.path.abspath(__file__))
-    schedule_file = input("Enter schedule JSON filename: ").strip()
-    students_file = input("Enter students JSON filename: ").strip()
-    schedule_path = os.path.join(folder, schedule_file)
-    students_path = os.path.join(folder, students_file)
+    schedule_file = input("Enter schedule JSON filename (just the filename, will look in Data/Schedules): ").strip()
+    students_file = input("Enter students JSON filename (just the filename, will look in Data/Students): ").strip()
+    schedule_path = os.path.abspath(os.path.join(folder, "Data/Schedules", schedule_file))
+    students_path = os.path.abspath(os.path.join(folder, "Data/Students", students_file))
     main(schedule_path, students_path)

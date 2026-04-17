@@ -6,51 +6,48 @@ def mainRunAlgorithm():
     print("----------------------------------------------------------")
     print("-------------------- Run An Algorithm --------------------")
 
-
-    print("")
-    print("What courses need an exam schedule?")
-    coursesFile = input("")
-
-    print("What students are enrolled in those courses?")
-    studentsFile = input("")
-
-    print("What locations are available for exams?")
-    locationsFile = input("")
-
-    print("What should the output file be called?")
-    outputFile = input("")
-
     algorithmChoice = 0
     while algorithmChoice not in range(1, 5):
-        print("Finally, what algorithm would you like to use?")
+        print("What algorithm would you like to use?")
         print("\t1. Brute Force")
         print("\t2. Greedy")
         print("\t3. Graph Coloring")
         print("\t4. Genetic")
         algorithmChoice = int(input(""))
 
-    executables = {
-        1: "./alg_binaries/bf",
-        2: "./alg_binaries/gr",
-        3: "./alg_binaries/gc",
-        4: "./alg_binaries/ga",
-    }
+    systemChoice = 0
+    while systemChoice not in range (1, 2):
+        print("")
+        print("Which system are you using?")
+        print("\t1. Windows")
+        print("\t2. Mac/Linux")
+        systemChoice = int(input("Enter 1 or 2: "))
+    
+    if systemChoice == 2:
+        executables = {
+            1: "./codePortion/alg_binaries/bf",
+            2: "./codePortion/alg_binaries/gr",
+            3: "./codePortion/alg_binaries/gc",
+            4: "./codePortion/alg_binaries/ga",
+        }
+    else:
+        executables = {
+            1: "./codePortion/alg_binaries/bf.exe",
+            2: "./codePortion/alg_binaries/gr.exe",
+            3: "./codePortion/alg_binaries/gc.exe",
+            4: "./codePortion/alg_binaries/ga.exe",
+        }
+
     executable = executables[algorithmChoice]
 
     if not os.path.exists(executable):
         print(f"Error: executable '{executable}' not found. Did you compile it with the correct name?")
         return
 
-    # All four C programs prompt for the same four inputs in the same order so we can pipe in data via newline separated stdin
-    stdin_input = "\n".join([studentsFile, coursesFile, locationsFile, outputFile]) + "\n"
-
     print(f"\nLaunching {executable}...\n")
 
-    result = subprocess.run(
-        [executable],
-        input=stdin_input,
-        text=True           # strings instead of bytes
-    )
+    #Prompts for the JSON files will come via running the executable
+    result = subprocess.run([executable])
 
     if result.returncode != 0:
         print(f"\nAlgorithm exited with error code {result.returncode}.")
