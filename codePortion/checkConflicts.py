@@ -35,10 +35,27 @@ def main(schedule_path, students_path):
             if len(courses) > 1:
                 print(f"Student {student.get('studentID', '?')} has conflict at {slot}: {courses}")
                 total_conflicts += len(courses) - 1
+
+    # Check for location conflicts (same location, day, and time)
+    location_slot_courses = defaultdict(list)  # (location, day, time) -> list of courses
+    for course_id, slot in schedule.items():
+        if slot is not None:
+            key = (slot['location'], slot['day'], slot['time'])
+            location_slot_courses[key].append(course_id)
+
+    location_conflict_found = False
+    for loc_slot, courses in location_slot_courses.items():
+        if len(courses) > 1:
+            location_conflict_found = True
+            location, day, time = loc_slot
+            print(f"Location conflict at {location} on {day} at {time}: {courses}")
+
     if total_conflicts == 0:
-        print("No conflicts found!")
+        print("No student conflicts found!")
     else:
-        print(f"Total conflicts found: {total_conflicts}")
+        print(f"Total student conflicts found: {total_conflicts}")
+    if not location_conflict_found:
+        print("No location conflicts found!")
 
 if __name__ == "__main__":
     import os

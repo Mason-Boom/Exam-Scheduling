@@ -1,0 +1,50 @@
+{
+    "departments": [
+        {
+            "name": "CSC",
+            "courses": [
+                {
+                    "courseID": "89a30f9c-1993-474c-9cbf-ff00e22fe57e"
+                },
+                {
+                    "courseID": "e6775b5d-8983-45b1-b642-546ef3b40e2f"
+                },
+                {
+                    "courseID": "655a0670-c352-4b05-b40f-0f03be18af1b"
+                },
+                {
+                    "courseID": "42e524a8-d72c-43a9-9c2e-4118b73d35c5"
+                },
+                {
+                    "courseID": "c9b026d7-74cc-40dc-8479-b0fa5e2dbbd2"
+                },
+                {
+                    "courseID": "693e14e7-12ba-4f9e-8bcc-3bcd671125d0"
+                }
+            ]
+        },
+        {
+            "name": "ECE",
+            "courses": [
+                {
+                    "courseID": "6297f79a-68e3-4acc-8702-41d02b569696"
+                },
+                {
+                    "courseID": "b3bf3052-c80b-442e-8747-70c67c68448a"
+                }
+            ]
+        },
+        {
+            "name": "ART",
+            "courses": []
+        },
+        {
+            "name": "MUS",
+            "courses": []
+        },
+        {
+            "name": "GEO",
+            "courses": []
+        }
+    ]
+}

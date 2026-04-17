@@ -1,0 +1,413 @@
+{
+    "departments": [
+        {
+            "name": "CSC",
+            "courses": [
+                {
+                    "courseID": "48a4907d-7464-4046-b8d0-e37f84b0b9cc"
+                },
+                {
+                    "courseID": "5034d305-baa9-4df5-9e11-6f22dba2310d"
+                },
+                {
+                    "courseID": "a55dd53d-2650-48e7-97c1-16b5f9fc8b12"
+                },
+                {
+                    "courseID": "5dadec68-94f6-44b9-89e6-915a498389e4"
+                },
+                {
+                    "courseID": "16f8ac23-9be9-4172-b503-4f7e19f404ba"
+                },
+                {
+                    "courseID": "6d3d1485-429d-44b7-9f19-f67908378827"
+                },
+                {
+                    "courseID": "377ac464-3ecb-4cf0-8764-d9192f0d18f6"
+                },
+                {
+                    "courseID": "7c8d58c5-cfd0-4cd1-9b72-49ab49247539"
+                },
+                {
+                    "courseID": "99ee6249-06e8-49dd-8695-da2a428cb16f"
+                },
+                {
+                    "courseID": "b5cc9f15-f532-45b6-847d-ff297501e130"
+                },
+                {
+                    "courseID": "fc36d551-6d7d-43dd-882e-31260657fefa"
+                },
+                {
+                    "courseID": "b807893e-7459-46b9-a1f6-ea3ae3dce8da"
+                },
+                {
+                    "courseID": "9386fe9c-0a34-4a12-94e3-b0ed2ce3cc92"
+                },
+                {
+                    "courseID": "90b696c6-3943-49c8-a900-d19ccea9492d"
+                },
+                {
+                    "courseID": "c07188fd-2ecb-4767-b6b5-ff45acd550c5"
+                },
+                {
+                    "courseID": "316560a1-348b-4a08-b755-06bf29ca45aa"
+                },
+                {
+                    "courseID": "246a08e0-7fc1-4c8f-98f5-7ce07fe63404"
+                },
+                {
+                    "courseID": "8feebb20-7e00-457a-a37e-1c57964566fc"
+                },
+                {
+                    "courseID": "e4254946-0b15-4bd1-ab53-59c32f2c3596"
+                },
+                {
+                    "courseID": "c6bd85b4-2e32-49e6-a570-b68ec39d2f40"
+                },
+                {
+                    "courseID": "8de98150-6660-4324-9607-8a3daa72effd"
+                },
+                {
+                    "courseID": "2cc00b61-5969-4008-8ea8-87b3d848c647"
+                },
+                {
+                    "courseID": "6d187ebf-b071-45aa-b7bb-c6eb040e31f8"
+                },
+                {
+                    "courseID": "001366d7-98aa-4bd3-91fa-7d0e81fbc87b"
+                },
+                {
+                    "courseID": "ef8bd3bc-be00-427e-ae2b-1e64d6957959"
+                },
+                {
+                    "courseID": "d6009793-a377-46d1-a6c1-5ab5dd13d980"
+                },
+                {
+                    "courseID": "aeef3119-c715-4681-8151-eaa04be9295b"
+                },
+                {
+                    "courseID": "0e841c38-3e37-4d13-a2b8-cf0e46c957b4"
+                },
+                {
+                    "courseID": "aae47f62-d50b-4cbd-b48b-2f3f1bd21a49"
+                },
+                {
+                    "courseID": "1c41f509-5b65-4ccb-aaec-954b5172675e"
+                },
+                {
+                    "courseID": "5cff0d57-b8c3-4e75-b3da-e5ffba49bf7f"
+                },
+                {
+                    "courseID": "ecd81e1d-ff80-4b3d-8cba-97112c729dd7"
+                },
+                {
+                    "courseID": "b1e5b712-ae5f-4303-8e7d-e7becdc730d2"
+                },
+                {
+                    "courseID": "534b1cda-8b0e-4e6b-b455-62435b28d766"
+                },
+                {
+                    "courseID": "d8b99d1e-d0cf-4903-8a41-a7ff08180676"
+                },
+                {
+                    "courseID": "a1c07441-ca7a-43ff-8ed9-098ad25b956d"
+                },
+                {
+                    "courseID": "9662246f-4b3d-402b-ac34-53cd8c2315ab"
+                },
+                {
+                    "courseID": "f00c747a-f995-4318-b123-bf6c07ef7381"
+                },
+                {
+                    "courseID": "bf569506-25be-4fa0-8ed1-f729bdaf4fb0"
+                },
+                {
+                    "courseID": "a1a8f47b-89c4-4b13-b517-1cbfa943d7a6"
+                },
+                {
+                    "courseID": "ffdbd4be-1181-46a2-a1a3-8d50ca9d647b"
+                },
+                {
+                    "courseID": "29c3f352-4d25-40b4-b6d0-09efcbf975bd"
+                },
+                {
+                    "courseID": "22f0ccef-d093-442d-bea6-f781c7c4621e"
+                },
+                {
+                    "courseID": "9aa38261-e98a-42d7-a66d-6281377987c1"
+                },
+                {
+                    "courseID": "9238e80d-bda0-4556-91cd-2ce2c29c3545"
+                },
+                {
+                    "courseID": "47c94ae2-171b-4923-867d-2bfcd78b92a3"
+                },
+                {
+                    "courseID": "b49190f0-d821-423c-be07-386fd7d5900a"
+                },
+                {
+                    "courseID": "ab02b258-f8ff-49dd-9e47-245f74d1fa62"
+                },
+                {
+                    "courseID": "00807f72-c27e-4085-bc4e-6e1ff2cb4de0"
+                },
+                {
+                    "courseID": "1a3dabc6-e860-4b9e-ba0d-e9ca52b3472d"
+                },
+                {
+                    "courseID": "3f31b9a4-a4af-4130-8897-93ae0b1c3a9d"
+                },
+                {
+                    "courseID": "406d5c3e-7cad-40b4-aa05-6b50e633cad1"
+                },
+                {
+                    "courseID": "26a061bc-3a55-4337-9bad-d0679b4aafb2"
+                },
+                {
+                    "courseID": "84cda418-95f1-42e8-96cb-1faf8fe873e9"
+                },
+                {
+                    "courseID": "36ff2e38-3062-400e-80ff-ca3de75c3090"
+                },
+                {
+                    "courseID": "43c0c71f-a20a-49c4-a950-eb770d480634"
+                },
+                {
+                    "courseID": "6ef3e19a-57e7-45f2-b1cb-90f0fdb61c84"
+                },
+                {
+                    "courseID": "54dc76c4-f87c-4086-88c1-f5af05cc763e"
+                },
+                {
+                    "courseID": "a8ad8964-666f-4e0c-b1d2-d6341c9add3a"
+                },
+                {
+                    "courseID": "8eecf1ee-2e9e-46ef-868f-0eb3330cfee4"
+                },
+                {
+                    "courseID": "9df56be5-38a8-470f-afa6-9a1de8b2a5e7"
+                },
+                {
+                    "courseID": "e6c2c78a-fa51-489d-bad6-521e67dfce2b"
+                },
+                {
+                    "courseID": "5055194f-5613-46e8-b5a6-92ba0b09246a"
+                },
+                {
+                    "courseID": "0ddc5436-9132-4234-a832-71c6ac546bb6"
+                },
+                {
+                    "courseID": "b6cf09eb-011a-49d2-9744-82cabbadafd0"
+                },
+                {
+                    "courseID": "aecefd47-e421-43ef-818a-fb250fc6daf3"
+                },
+                {
+                    "courseID": "8a081bc6-395e-40b4-a67a-5e170f380267"
+                },
+                {
+                    "courseID": "61cbae30-d4e7-4eb5-98f3-81747909d98c"
+                },
+                {
+                    "courseID": "854fff1d-6d05-47b2-ae55-33f04e0b7c94"
+                }
+            ]
+        },
+        {
+            "name": "ECE",
+            "courses": [
+                {
+                    "courseID": "7c085c5f-01b1-4cfa-97b7-5e8bee393fe7"
+                },
+                {
+                    "courseID": "116ffbbe-926f-4861-b525-03472af44b1c"
+                },
+                {
+                    "courseID": "0f9391b3-ac0c-4fae-994e-2be2e75f84fd"
+                },
+                {
+                    "courseID": "b66904ac-2d24-4a43-9711-59c71588087e"
+                },
+                {
+                    "courseID": "cd4ebbf8-1847-4db1-84cb-cede251075fe"
+                },
+                {
+                    "courseID": "7a5ea69f-4b3e-4208-916a-6683c3a1501d"
+                },
+                {
+                    "courseID": "6fe10e6d-b238-418a-944b-dbdf430674ca"
+                },
+                {
+                    "courseID": "7231babe-2636-41fe-a65a-064cd698eb9d"
+                },
+                {
+                    "courseID": "6d45a396-4d24-4a3b-b093-91d6e3f12a9f"
+                },
+                {
+                    "courseID": "f3bbe3fb-bea2-40f4-8368-7203fdf7e686"
+                },
+                {
+                    "courseID": "dbe7fc81-f103-4530-aad2-8ef801d0c829"
+                },
+                {
+                    "courseID": "8d28049e-9d96-4113-84f4-ccca9508a29d"
+                },
+                {
+                    "courseID": "5ac20f6b-6025-470d-bf1c-e778bac3d01e"
+                },
+                {
+                    "courseID": "b2327016-5ebd-415a-95b6-1c8765c7dc34"
+                },
+                {
+                    "courseID": "e9aac61c-b7de-400d-b0b8-3be43e82acf5"
+                },
+                {
+                    "courseID": "bb3dbdb5-4659-4800-8dae-018ace770b10"
+                },
+                {
+                    "courseID": "53b08b4f-aeb7-4ffb-8eac-e205cf2c846b"
+                },
+                {
+                    "courseID": "1e87132c-0d9a-4080-94fe-5cd19207b8c7"
+                },
+                {
+                    "courseID": "7be74b3a-5a3e-424a-9f88-038d5777b892"
+                },
+                {
+                    "courseID": "17f44364-16d6-4db0-9c05-5a50fd8666fb"
+                },
+                {
+                    "courseID": "be29a44d-6656-4635-ba31-be8ce47fe693"
+                },
+                {
+                    "courseID": "15d3861a-7724-4c2c-8357-003d2a30bf06"
+                },
+                {
+                    "courseID": "908e9345-4761-43d1-a19d-8b0777dee53f"
+                },
+                {
+                    "courseID": "450aed33-c348-4ea8-aef3-d13084325a64"
+                }
+            ]
+        },
+        {
+            "name": "ART",
+            "courses": [
+                {
+                    "courseID": "11ee2064-ae2f-4d13-a2e1-e3006149c004"
+                },
+                {
+                    "courseID": "c8595c79-f272-4da0-9036-b54afc9977bd"
+                },
+                {
+                    "courseID": "cc6c6703-bca3-4bf5-be8a-cadfc9de4ef4"
+                },
+                {
+                    "courseID": "9eef7519-3b46-4c64-93cc-9f728cc22e7e"
+                },
+                {
+                    "courseID": "89b0be04-1a01-4073-b430-50be9386031a"
+                },
+                {
+                    "courseID": "47211a1c-1ebb-45af-a6da-35759770f682"
+                },
+                {
+                    "courseID": "cf47e4ce-daaf-422e-a25a-48620e146c81"
+                },
+                {
+                    "courseID": "3c9a0932-7477-4fb1-97ee-aaa666fcfa5e"
+                }
+            ]
+        },
+        {
+            "name": "MUS",
+            "courses": [
+                {
+                    "courseID": "1f4134f9-1976-4880-bb3e-910bad4b7af2"
+                },
+                {
+                    "courseID": "a0aa75d8-f96f-446d-8795-39ea99908f70"
+                },
+                {
+                    "courseID": "86628c21-64ff-4316-b54f-b757cfba48a0"
+                },
+                {
+                    "courseID": "0abb10d6-3d98-4afb-95be-1bb135c93ed5"
+                },
+                {
+                    "courseID": "979336ea-5953-4f68-b519-3735e5bea2fb"
+                },
+                {
+                    "courseID": "55314ae6-5dcf-4cf9-9285-2d1737fc6440"
+                },
+                {
+                    "courseID": "50c30de2-656f-4533-bfd3-de17a368741c"
+                },
+                {
+                    "courseID": "8f6076fd-eae8-46cc-8161-9c63a6c572e0"
+                },
+                {
+                    "courseID": "8d1d37e5-0074-49b7-bf9a-0421cb6639d7"
+                },
+                {
+                    "courseID": "a5b144b1-db9e-47d9-a96e-8a055c15eabe"
+                },
+                {
+                    "courseID": "6113e751-dbd5-4b55-9b90-d2afe7f5ca61"
+                },
+                {
+                    "courseID": "b20a6b29-82c8-4970-8659-d491a3b99287"
+                },
+                {
+                    "courseID": "795b692d-c826-4a76-baa1-3a0c04cb5c6e"
+                },
+                {
+                    "courseID": "95768283-3052-424c-9ff1-1ec3df9e70f1"
+                },
+                {
+                    "courseID": "93fa0710-e13c-4832-b190-0445d5d06a37"
+                },
+                {
+                    "courseID": "78eaab7b-3d01-43f8-b16b-81c19bbaa0ac"
+                },
+                {
+                    "courseID": "b2cea2f3-1413-4a28-aef9-a34dccae133b"
+                },
+                {
+                    "courseID": "37047bc7-e703-4c68-82db-507d85687519"
+                },
+                {
+                    "courseID": "b2cc2d65-7f15-4146-bf1d-3e4cda9f7792"
+                },
+                {
+                    "courseID": "10fb84ec-d556-46aa-a2c8-8bd755269a8e"
+                },
+                {
+                    "courseID": "3b68dd2f-5113-4487-b394-1bccbf0c778e"
+                },
+                {
+                    "courseID": "bc1041bd-963d-4edd-b85c-017278215681"
+                },
+                {
+                    "courseID": "99a7ef5d-3bc7-42da-89db-d821fa3f8f64"
+                },
+                {
+                    "courseID": "2a968ab6-68b2-4037-9b6c-d7301354e363"
+                }
+            ]
+        },
+        {
+            "name": "GEO",
+            "courses": [
+                {
+                    "courseID": "13a28293-41c3-468f-864a-af57f8795a0e"
+                },
+                {
+                    "courseID": "b704e232-7a57-4a01-844e-db095cd3c72a"
+                },
+                {
+                    "courseID": "64221ff0-b495-4879-8442-d1a1237cf386"
+                }
+            ]
+        }
+    ]
+}

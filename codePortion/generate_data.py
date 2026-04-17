@@ -29,11 +29,14 @@ def getRandomWeighedDepartment():
 
 def generateNewCourses(outputName:str, numToGenerate:int):
 
+    # Ensure output is in Data/Courses directory
+    courses_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Data", "Courses")
+    os.makedirs(courses_dir, exist_ok=True)
     if not outputName.endswith(".json"):
         outputName += ".json"
-
-    if os.path.exists(outputName):
-        print("Error - A generated dataset already exists by that name")
+    output_path = os.path.join(courses_dir, outputName)
+    if os.path.exists(output_path):
+        print("Error - A generated dataset already exists by that name in Data/Courses/")
         print("Exiting...")
         return
 
@@ -62,24 +65,35 @@ def generateNewCourses(outputName:str, numToGenerate:int):
 
     jsonEncode = json.dumps(overallJSON, indent=4)
 
-    with open(outputName, "w") as file:
-            file.write(jsonEncode)
-            file.write("\n")
+    with open(output_path, "w") as file:
+        file.write(jsonEncode)
+        file.write("\n")
 
 
 def generateNewStudents(existingCourses:str, outputName:str, numToGenerate:int):
 
-    if not os.path.exists(existingCourses):
-        print(f"Error - A course dataset by the name {existingCourses} was not found!")
+    # Look for courses in Data/Courses directory
+    courses_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Data", "Courses")
+    course_path = os.path.join(courses_dir, existingCourses) if not os.path.isabs(existingCourses) else existingCourses
+    if not course_path.endswith(".json"):
+        course_path += ".json"
+    if not os.path.exists(course_path):
+        print(f"Error - A course dataset by the name {course_path} was not found!")
+        print("Exiting...")
+        return
+
+    # Ensure output is in Data/Students directory
+    students_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Data", "Students")
+    os.makedirs(students_dir, exist_ok=True)
+    if not outputName.endswith(".json"):
+        outputName += ".json"
+    output_path = os.path.join(students_dir, outputName)
+    if os.path.exists(output_path):
+        print("Error - A generated student dataset already exists by that name in Data/Students/")
         print("Exiting...")
         return
     
-    if os.path.exists(outputName):
-        print("Error - A generated student dataset already exists by that name")
-        print("Exiting...")
-        return
-    
-    with open(existingCourses, "r") as courseFile:
+    with open(course_path, "r") as courseFile:
         courseData = json.load(courseFile)
 
     listedDepartments = courseData["departments"]
@@ -129,9 +143,9 @@ def generateNewStudents(existingCourses:str, outputName:str, numToGenerate:int):
     
     jsonEncode = json.dumps(overallJSON, indent=4)
 
-    with open(outputName, "w") as file:
-            file.write(jsonEncode)
-            file.write("\n")
+    with open(output_path, "w") as file:
+        file.write(jsonEncode)
+        file.write("\n")
 
 
 
@@ -154,7 +168,7 @@ def mainGenerate():
             case 1:
                 # Generate New Courses
 
-                outputName:str = input("What would you like the output file to be called? ")
+                outputName:str = input("What would you like the output file to be called? (It will be saved in Data/Courses/) ")
                 numToGen:int = int(input("How many courses should be generated? "))
 
                 generateNewCourses(outputName, numToGen)
@@ -162,7 +176,7 @@ def mainGenerate():
                 # Generate Students Courses
 
                 existingCourses:str = input("What the file name of the courses would you like to be used? Include the file extension. ")
-                outputName:str = input("What would you like the output file to be called? ")
+                outputName:str = input("What would you like the output file to be called? (It will be saved in Data/Students/) ")
                 numToGen:int = int(input("How many students should be generated? "))
 
                 generateNewStudents(existingCourses, outputName, numToGen)

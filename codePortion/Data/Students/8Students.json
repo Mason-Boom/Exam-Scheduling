@@ -1,0 +1,84 @@
+{
+    "students": [
+        {
+            "studentID": "8f372b4c-c071-4a72-82ff-91043671504b",
+            "major": "CSC",
+            "enrolledCourses": [
+                "fa20be84-75bf-4e14-b46c-44a7532d922d",
+                "3866d9e8-ac4b-4af0-be70-65b7f56ba96e",
+                "c0165420-e4b4-4fa1-a668-155b8226bd94",
+                "d0761bf4-183c-4c2c-b147-73b336fb3dd7"
+            ]
+        },
+        {
+            "studentID": "2aaafb93-9443-4387-8937-d7918fe4ad20",
+            "major": "ECE",
+            "enrolledCourses": [
+                "c0165420-e4b4-4fa1-a668-155b8226bd94",
+                "3866d9e8-ac4b-4af0-be70-65b7f56ba96e",
+                "d0761bf4-183c-4c2c-b147-73b336fb3dd7",
+                "fa20be84-75bf-4e14-b46c-44a7532d922d"
+            ]
+        },
+        {
+            "studentID": "09a98ff0-4724-4675-ac3d-161669a2e004",
+            "major": "ART",
+            "enrolledCourses": [
+                "d0761bf4-183c-4c2c-b147-73b336fb3dd7",
+                "3866d9e8-ac4b-4af0-be70-65b7f56ba96e",
+                "fa20be84-75bf-4e14-b46c-44a7532d922d",
+                "c0165420-e4b4-4fa1-a668-155b8226bd94"
+            ]
+        },
+        {
+            "studentID": "a8d3d811-d74e-4cbb-bd69-c4fd8545e103",
+            "major": "MUS",
+            "enrolledCourses": [
+                "fa20be84-75bf-4e14-b46c-44a7532d922d",
+                "c0165420-e4b4-4fa1-a668-155b8226bd94",
+                "3866d9e8-ac4b-4af0-be70-65b7f56ba96e",
+                "d0761bf4-183c-4c2c-b147-73b336fb3dd7"
+            ]
+        },
+        {
+            "studentID": "fb26a359-5a1f-4b8f-ae41-658ad55c180e",
+            "major": "MUS",
+            "enrolledCourses": [
+                "3866d9e8-ac4b-4af0-be70-65b7f56ba96e",
+                "c0165420-e4b4-4fa1-a668-155b8226bd94",
+                "d0761bf4-183c-4c2c-b147-73b336fb3dd7",
+                "fa20be84-75bf-4e14-b46c-44a7532d922d"
+            ]
+        },
+        {
+            "studentID": "fcbcbc75-0a29-4c50-be72-8dc1e626e6eb",
+            "major": "CSC",
+            "enrolledCourses": [
+                "3866d9e8-ac4b-4af0-be70-65b7f56ba96e",
+                "fa20be84-75bf-4e14-b46c-44a7532d922d",
+                "c0165420-e4b4-4fa1-a668-155b8226bd94",
+                "d0761bf4-183c-4c2c-b147-73b336fb3dd7"
+            ]
+        },
+        {
+            "studentID": "9043494a-3550-4687-a86c-7ce3613f32d2",
+            "major": "MUS",
+            "enrolledCourses": [
+                "3866d9e8-ac4b-4af0-be70-65b7f56ba96e",
+                "fa20be84-75bf-4e14-b46c-44a7532d922d",
+                "d0761bf4-183c-4c2c-b147-73b336fb3dd7",
+                "c0165420-e4b4-4fa1-a668-155b8226bd94"
+            ]
+        },
+        {
+            "studentID": "bf90e7c5-d655-4ccf-aea3-93840ba112be",
+            "major": "MUS",
+            "enrolledCourses": [
+                "3866d9e8-ac4b-4af0-be70-65b7f56ba96e",
+                "c0165420-e4b4-4fa1-a668-155b8226bd94",
+                "fa20be84-75bf-4e14-b46c-44a7532d922d",
+                "d0761bf4-183c-4c2c-b147-73b336fb3dd7"
+            ]
+        }
+    ]
+}

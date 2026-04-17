@@ -1,0 +1,82 @@
+{
+	"1f8ca026-e40b-4036-9987-028037c69cf2":	{
+		"day":	"W",
+		"time":	"1:00pm-3:00pm",
+		"location":	"Location 5"
+	},
+	"3cdbc79f-7b24-45ec-bbef-97ca439dcd48":	{
+		"day":	"M",
+		"time":	"3:30pm-5:30pm",
+		"location":	"Location 3"
+	},
+	"fe549717-5836-4308-b645-686e50ab572a":	{
+		"day":	"R",
+		"time":	"8:00am-10:00am",
+		"location":	"Location 3"
+	},
+	"ccd21f82-a087-4be8-896a-d0f0bdd09c5d":	{
+		"day":	"W",
+		"time":	"8:00am-10:00am",
+		"location":	"Location 12"
+	},
+	"33da3212-813e-4dbc-a535-731f23d12eee":	{
+		"day":	"M",
+		"time":	"8:00am-10:00am",
+		"location":	"Location 4"
+	},
+	"7cf89e24-2358-4a3c-b8ca-8decab90abb5":	{
+		"day":	"T",
+		"time":	"1:00pm-3:00pm",
+		"location":	"Location 12"
+	},
+	"2655927d-b3cc-48e0-8072-7d749ee12fc4":	{
+		"day":	"T",
+		"time":	"10:30am-12:30pm",
+		"location":	"Location 9"
+	},
+	"87ab9218-82d1-4f78-9aa7-1897c3868294":	{
+		"day":	"M",
+		"time":	"10:30am-12:30pm",
+		"location":	"Location 3"
+	},
+	"046868e6-8ac0-4372-9408-2dbee3c18d78":	{
+		"day":	"F",
+		"time":	"10:30am-12:30pm",
+		"location":	"Location 8"
+	},
+	"12746a5b-ef08-4378-a31d-6ec521114edd":	{
+		"day":	"R",
+		"time":	"10:30am-12:30pm",
+		"location":	"Location 14"
+	},
+	"1fae7132-cf19-40c7-ac98-ea8adcbd8815":	{
+		"day":	"T",
+		"time":	"3:30pm-5:30pm",
+		"location":	"Location 7"
+	},
+	"1eec8f12-5444-48a5-8c7c-a9140aade718":	{
+		"day":	"M",
+		"time":	"1:00pm-3:00pm",
+		"location":	"Location 13"
+	},
+	"e8b36a6d-f2ae-4111-bb3a-a71e9379a72a":	{
+		"day":	"W",
+		"time":	"3:30pm-5:30pm",
+		"location":	"Location 10"
+	},
+	"944be0c8-0f31-420d-91b0-9392c2bc2500":	{
+		"day":	"R",
+		"time":	"3:30pm-5:30pm",
+		"location":	"Location 15"
+	},
+	"2571cfa5-c313-42aa-af2b-7ea11b73ae87":	{
+		"day":	"F",
+		"time":	"8:00am-10:00am",
+		"location":	"Location 5"
+	},
+	"8ef4eee7-98c6-4a82-9113-26a2d3fa6540":	{
+		"day":	"F",
+		"time":	"3:30pm-5:30pm",
+		"location":	"Location 4"
+	}
+}

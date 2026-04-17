@@ -1,0 +1,20 @@
+These student files need to be run with their corresponding course files, as otherwise they will not match up.
+
+  Student Count | Course Count
+              4 | 4
+              8 | 4
+             20 | 4
+             40 | 8
+             80 | 16
+            160 | 32
+            320 | 64
+            640 | 128
+           1280 | 256
+           2560 | 512
+           5120 | 1024
+          10240 | 2048
+          20480 | 4096
+          40960 | 8192
+          81920 | 16384
+         123840 | 32768
+too large to push to github | 65536

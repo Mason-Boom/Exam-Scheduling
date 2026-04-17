@@ -1,0 +1,76 @@
+{
+    "departments": [
+        {
+            "name": "CSC",
+            "courses": [
+                {
+                    "courseID": "1f8ca026-e40b-4036-9987-028037c69cf2"
+                },
+                {
+                    "courseID": "3cdbc79f-7b24-45ec-bbef-97ca439dcd48"
+                },
+                {
+                    "courseID": "fe549717-5836-4308-b645-686e50ab572a"
+                },
+                {
+                    "courseID": "ccd21f82-a087-4be8-896a-d0f0bdd09c5d"
+                },
+                {
+                    "courseID": "33da3212-813e-4dbc-a535-731f23d12eee"
+                },
+                {
+                    "courseID": "7cf89e24-2358-4a3c-b8ca-8decab90abb5"
+                },
+                {
+                    "courseID": "2655927d-b3cc-48e0-8072-7d749ee12fc4"
+                },
+                {
+                    "courseID": "87ab9218-82d1-4f78-9aa7-1897c3868294"
+                },
+                {
+                    "courseID": "046868e6-8ac0-4372-9408-2dbee3c18d78"
+                },
+                {
+                    "courseID": "12746a5b-ef08-4378-a31d-6ec521114edd"
+                }
+            ]
+        },
+        {
+            "name": "ECE",
+            "courses": [
+                {
+                    "courseID": "1fae7132-cf19-40c7-ac98-ea8adcbd8815"
+                },
+                {
+                    "courseID": "1eec8f12-5444-48a5-8c7c-a9140aade718"
+                },
+                {
+                    "courseID": "e8b36a6d-f2ae-4111-bb3a-a71e9379a72a"
+                }
+            ]
+        },
+        {
+            "name": "ART",
+            "courses": [
+                {
+                    "courseID": "944be0c8-0f31-420d-91b0-9392c2bc2500"
+                },
+                {
+                    "courseID": "2571cfa5-c313-42aa-af2b-7ea11b73ae87"
+                }
+            ]
+        },
+        {
+            "name": "MUS",
+            "courses": [
+                {
+                    "courseID": "8ef4eee7-98c6-4a82-9113-26a2d3fa6540"
+                }
+            ]
+        },
+        {
+            "name": "GEO",
+            "courses": []
+        }
+    ]
+}
