@@ -221,7 +221,7 @@ static void save_schedules(const char *path)
 
     fprintf(f, "[\n");
 
-    for (int i = 0; i < master_schedule_count; i++) {
+    for (int i = 0; i < 1; i++) {
         cJSON    *sched_obj = cJSON_CreateObject();
         Schedule *s         = &master_schedule_list[i];
 
@@ -235,17 +235,16 @@ static void save_schedules(const char *path)
 
         // Print one object at a time, never accumulating
         char *json_str = cJSON_PrintUnformatted(sched_obj); // unformatted = smaller output
-        fprintf(f, "%s%s\n", json_str, (i < master_schedule_count - 1) ? "," : "");
+        fprintf(f, "%s%s\n", json_str, "");
 
         free(json_str);
         cJSON_Delete(sched_obj); // free immediately after writing
-
-        if (i % 100000 == 0) printf("Written %d / %d\n", i, master_schedule_count);
+        
     }
-
+    
     fprintf(f, "]\n");
     fclose(f);
-    printf("Wrote %d schedules to %s\n", master_schedule_count, path);
+    printf("Wrote %d schedules to %s\n", (master_schedule_count <= 1), path);
 }
 
 /* ─── main ─────────────────────────────────────────────────────── */
@@ -395,6 +394,8 @@ int main(void)
     printf("Total schedules generated: %d\n",   count);
     printf("Valid schedules remaining: %d\n",   master_schedule_count);
 
+    printf("\n\n");
+    printf("Freeing Resources; This may take a while...\n");
     /* ── cleanup ───────────────────────────────────────────────── */
     for (int i = 0; i < master_schedule_count; i++)
         free(master_schedule_list[i].assignments);
