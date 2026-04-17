@@ -80,7 +80,7 @@ When choosing data (Students, Courses, and Locations) to run the algorithms with
 |                 123840 | 32768        |
 |not present (too large) | 65536        |
 
-It is also important that there is actually enough timeslots to map every exam to a distict timeslot so that two exams do not occupy the same space.
+It is also important that there are actually enough timeslots to map every exam to a distict timeslot so that two exams do not occupy the same space.
 The equation for this is $numLocations * 20 \ge numExams$. The constant $20$ comes from $4$ timeslots a day for $5$ days, so $20$ timeslots per location. 
 This formula can be written as $numLocations \ge \frac{numExams}{20}$.
 
@@ -89,3 +89,12 @@ After running an algorithm (via `main.py`), the results are automatically saved 
 
 To check these results for conflicts (where conflicts are defined as a student scheduled for more than one exam at a time or two exams in the same timeslot and location), run the `check_conflicts.py` file from the root directory by typing into the terminal `py .\codePortion\check_conflicts.py` if on Windows or `python3 ./codePortion/check_conflicts.py` if on Mac/Linux. 
 If your IDE allows, the play button on the `check_conflicts.py` file should also work.
+
+## Compiling C-Files
+
+If any alterations are made to the C files, they will require recompilation. Here are the lines to recompile (enter in the terminal while in the `~/codePortion/CFiles` directory):
+
+- Brute Force: `gcc brute_force.c cJSON.c -o bf`
+- Greedy: `gcc greedy_algorithm -o gr`
+- Graph Coloring: `gcc graph_coloring.c -o gc`
+- Genetic: `gcc genetic_algorithm.c cJSON.c -o ga`
