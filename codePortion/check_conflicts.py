@@ -2,10 +2,6 @@ import json
 import sys
 from collections import defaultdict
 
-def load_json(path):
-    schedule_path = os.path.abspath(os.path.join(folder, "../Data/Schedules", schedule_file))
-    students_path = os.path.abspath(os.path.join(folder, "../Data/Students", students_file))
-
 def main(schedule_path, students_path):
     # Load schedule and students
     with open(schedule_path, 'r', encoding='utf-8') as f:
@@ -61,7 +57,7 @@ if __name__ == "__main__":
     import os
     folder = os.path.dirname(os.path.abspath(__file__))
     schedule_file = input("Enter schedule JSON filename (just the filename, will look in Data/Schedules): ").strip()
-    students_file = input("Enter students JSON filename (just the filename, will look in Data/Students): ").strip()
-    schedule_path = os.path.abspath(os.path.join(folder, "Data/Schedules", schedule_file))
-    students_path = os.path.abspath(os.path.join(folder, "Data/Students", students_file))
+    students_file = input("Enter **students** JSON filename (just the filename, will look in Data/Students): ").strip()
+    schedule_path = os.path.abspath(os.path.join(folder, "./Data/Schedules", schedule_file))
+    students_path = os.path.abspath(os.path.join(folder, "./Data/Students", students_file))
     main(schedule_path, students_path)
