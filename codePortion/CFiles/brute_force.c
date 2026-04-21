@@ -191,6 +191,7 @@ static void remove_conflicts(void)
         } else {
             /* Compact valid schedules to the front of the array */
             master_schedule_list[new_count++] = master_schedule_list[i];
+            break;
         }
     }
     master_schedule_count = new_count;
@@ -219,9 +220,7 @@ static void save_schedules(const char *path)
     FILE *f = fopen(path, "w");
     if (!f) { fprintf(stderr, "Cannot write: %s\n", path); return; }
 
-    fprintf(f, "[\n");
-
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < master_schedule_count; i++) {
         cJSON    *sched_obj = cJSON_CreateObject();
         Schedule *s         = &master_schedule_list[i];
 
@@ -235,16 +234,15 @@ static void save_schedules(const char *path)
 
         // Print one object at a time, never accumulating
         char *json_str = cJSON_PrintUnformatted(sched_obj); // unformatted = smaller output
-        fprintf(f, "%s%s\n", json_str, "");
+        fprintf(f, "%s%s\n", json_str, (i < master_schedule_count - 1) ? "," : "");
 
         free(json_str);
         cJSON_Delete(sched_obj); // free immediately after writing
         
     }
     
-    fprintf(f, "]\n");
     fclose(f);
-    printf("Wrote %d schedules to %s\n", (master_schedule_count <= 1), path);
+    printf("Wrote %d schedules to %s\n", master_schedule_count, path);
 }
 
 /* ─── main ─────────────────────────────────────────────────────── */
