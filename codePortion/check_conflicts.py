@@ -58,6 +58,7 @@ if __name__ == "__main__":
     folder = os.path.dirname(os.path.abspath(__file__))
     schedule_file = input("Enter schedule JSON filename (just the filename, will look in Data/Schedules): ").strip()
     students_file = input("Enter **students** JSON filename (just the filename, will look in Data/Students): ").strip()
+    print("\n")
     schedule_path = os.path.abspath(os.path.join(folder, "./Data/Schedules", schedule_file))
     students_path = os.path.abspath(os.path.join(folder, "./Data/Students", students_file))
     main(schedule_path, students_path)
