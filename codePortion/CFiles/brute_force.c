@@ -2,6 +2,9 @@
  * exam_scheduler.c
  *
  * C port of the Python exam scheduling backtracker.
+ * Optimized: conflict checking is performed incrementally during backtracking,
+ * pruning invalid branches early and stopping as soon as the first valid
+ * schedule is found — no more generating millions of schedules to discard.
  *
  * Dependencies:
  *   cJSON  — single-file JSON library
@@ -37,11 +40,6 @@ typedef struct {
 } ExamAssignment;
 
 typedef struct {
-    ExamAssignment *assignments;   /* array, length = num_exams */
-    int             num_exams;
-} Schedule;
-
-typedef struct {
     char   studentID[MAX_ID_LEN];
     char **courses;                /* array of course ID strings  */
     int    num_courses;
@@ -49,65 +47,51 @@ typedef struct {
 
 /* ─── globals ──────────────────────────────────────────────────── */
 
-static Schedule *master_schedule_list     = NULL;
-static int       master_schedule_count    = 0;
-static int       master_schedule_capacity = 0;
-
 static Student  *master_student_list = NULL;
 static int       num_students        = 0;
 
-static int count = 0;   /* total schedules generated */
+/* The single valid schedule found by the backtracker */
+static ExamAssignment *result_schedule = NULL;
+static int             result_num_exams = 0;
+static int             found = 0;   /* set to 1 when a valid schedule is found */
 
-/* ─── dynamic schedule list helpers ───────────────────────────── */
+static int count = 0;   /* total complete schedules evaluated */
 
-static void push_schedule(ExamAssignment *assignments, int num_exams)
-{
-    if (master_schedule_count >= master_schedule_capacity) {
-        master_schedule_capacity =
-            master_schedule_capacity == 0 ? 64 : master_schedule_capacity * 2;
-        master_schedule_list = realloc(
-            master_schedule_list,
-            (size_t)master_schedule_capacity * sizeof(Schedule));
-        if (!master_schedule_list) { perror("realloc"); exit(1); }
-    }
-
-    Schedule *s    = &master_schedule_list[master_schedule_count++];
-    s->num_exams   = num_exams;
-    s->assignments = malloc((size_t)num_exams * sizeof(ExamAssignment));
-    if (!s->assignments) { perror("malloc"); exit(1); }
-    memcpy(s->assignments, assignments,
-           (size_t)num_exams * sizeof(ExamAssignment));
-}
-
-/* ─── conflict detection ───────────────────────────────────────── */
+/* ─── incremental conflict detection ───────────────────────────── */
 
 /*
- * Returns 1 if any student has two exams at the same (day, time),
- * 0 otherwise.  Mirrors hasConflict() from the Python original.
+ * Checks only the exam just placed at position `index` against all
+ * previously placed exams (0 .. index-1).  Returns 1 if a student
+ * has both exams scheduled at the same (day, time), 0 otherwise.
+ *
+ * This is called after every placement so bad branches are pruned
+ * immediately rather than after a full permutation is built.
  */
-static int has_conflict(const Schedule *schedule)
+static int has_partial_conflict(const ExamAssignment *current, int index)
 {
     for (int si = 0; si < num_students; si++) {
         const Student *student = &master_student_list[si];
 
-        for (int a = 0; a < student->num_courses; a++) {
-            for (int b = a + 1; b < student->num_courses; b++) {
+        /* Is this student enrolled in the newly placed exam? */
+        int enrolled_in_new = 0;
+        for (int c = 0; c < student->num_courses; c++) {
+            if (strcmp(student->courses[c], current[index].examID) == 0) {
+                enrolled_in_new = 1;
+                break;
+            }
+        }
+        if (!enrolled_in_new) continue;
 
-                const Slot *sa = NULL, *sb = NULL;
-
-                for (int k = 0; k < schedule->num_exams; k++) {
-                    if (strcmp(schedule->assignments[k].examID,
-                               student->courses[a]) == 0)
-                        sa = &schedule->assignments[k].slot;
-                    if (strcmp(schedule->assignments[k].examID,
-                               student->courses[b]) == 0)
-                        sb = &schedule->assignments[k].slot;
+        /* Compare the new exam against every previously placed exam */
+        for (int prev = 0; prev < index; prev++) {
+            for (int c = 0; c < student->num_courses; c++) {
+                if (strcmp(student->courses[c], current[prev].examID) == 0) {
+                    /* Student is in both — check for time collision */
+                    if (strcmp(current[index].slot.day,  current[prev].slot.day)  == 0 &&
+                        strcmp(current[index].slot.time, current[prev].slot.time) == 0)
+                        return 1;
+                    break;
                 }
-
-                if (sa && sb &&
-                    strcmp(sa->day,  sb->day)  == 0 &&
-                    strcmp(sa->time, sb->time) == 0)
-                    return 1;
             }
         }
     }
@@ -116,34 +100,50 @@ static int has_conflict(const Schedule *schedule)
 
 /* ─── backtracking schedule generator ─────────────────────────── */
 
-static void backtrack(int            index,
-                      char         **exam_list,  int num_exams,
-                      const Slot    *slot_list,  int num_slots,
-                      ExamAssignment *current,
-                      int           *used_slots)
+/*
+ * Returns 1 if a valid schedule has been found (signals callers to
+ * unwind immediately), 0 otherwise.
+ */
+static int backtrack(int            index,
+                     char         **exam_list,  int num_exams,
+                     const Slot    *slot_list,  int num_slots,
+                     ExamAssignment *current,
+                     int           *used_slots)
 {
     if (index == num_exams) {
-        push_schedule(current, num_exams);
+        /* All exams placed with no conflicts detected along the way */
         count++;
-        printf("Added Schedule %d\n", count);
-        return;
+        memcpy(result_schedule, current, (size_t)num_exams * sizeof(ExamAssignment));
+        result_num_exams = num_exams;
+        found = 1;
+        printf("Valid schedule found after evaluating %d complete assignment(s).\n", count);
+        return 1;  /* signal: stop searching */
     }
 
     for (int i = 0; i < num_slots; i++) {
         if (!used_slots[i]) {
+            /* Place exam at this slot */
             strncpy(current[index].examID, exam_list[index], MAX_ID_LEN - 1);
             current[index].examID[MAX_ID_LEN - 1] = '\0';
             current[index].slot = slot_list[i];
             used_slots[i] = 1;
 
-            backtrack(index + 1,
-                      exam_list, num_exams,
-                      slot_list, num_slots,
-                      current, used_slots);
+            /* Prune immediately if this placement creates a conflict */
+            if (!has_partial_conflict(current, index)) {
+                if (backtrack(index + 1,
+                              exam_list, num_exams,
+                              slot_list, num_slots,
+                              current, used_slots))
+                {
+                    used_slots[i] = 0;
+                    return 1;  /* propagate the stop signal up the stack */
+                }
+            }
 
             used_slots[i] = 0;
         }
     }
+    return 0;  /* no valid schedule found down this branch */
 }
 
 static void generate_schedules(char **exam_list, int num_exams,
@@ -168,33 +168,17 @@ static void generate_schedules(char **exam_list, int num_exams,
                 idx++;
             }
 
+    /* Pre-allocate the result buffer and the working array */
+    result_schedule = malloc((size_t)num_exams * sizeof(ExamAssignment));
     ExamAssignment *current = malloc((size_t)num_exams * sizeof(ExamAssignment));
     int            *used    = calloc((size_t)num_slots,  sizeof(int));
-    if (!current || !used) { perror("malloc"); exit(1); }
+    if (!result_schedule || !current || !used) { perror("malloc"); exit(1); }
 
     backtrack(0, exam_list, num_exams, slot_list, num_slots, current, used);
 
     free(slot_list);
     free(current);
     free(used);
-}
-
-/* ─── conflict removal ─────────────────────────────────────────── */
-
-static void remove_conflicts(void)
-{
-    int new_count = 0;
-    for (int i = 0; i < master_schedule_count; i++) {
-        if (has_conflict(&master_schedule_list[i])) {
-            printf("Removed Improper Schedule %d\n", i);
-            free(master_schedule_list[i].assignments);
-        } else {
-            /* Compact valid schedules to the front of the array */
-            master_schedule_list[new_count++] = master_schedule_list[i];
-            break;
-        }
-    }
-    master_schedule_count = new_count;
 }
 
 /* ─── JSON I/O helpers ─────────────────────────────────────────── */
@@ -215,34 +199,32 @@ static char *read_file(const char *path)
     return buf;
 }
 
-static void save_schedules(const char *path)
+static void save_schedule(const char *path)
 {
+    if (!found) {
+        printf("No valid schedule exists for the given inputs.\n");
+        return;
+    }
+
     FILE *f = fopen(path, "w");
     if (!f) { fprintf(stderr, "Cannot write: %s\n", path); return; }
 
-    for (int i = 0; i < master_schedule_count; i++) {
-        cJSON    *sched_obj = cJSON_CreateObject();
-        Schedule *s         = &master_schedule_list[i];
-
-        for (int j = 0; j < s->num_exams; j++) {
-            cJSON *slot_obj = cJSON_CreateObject();
-            cJSON_AddStringToObject(slot_obj, "day",      s->assignments[j].slot.day);
-            cJSON_AddStringToObject(slot_obj, "time",     s->assignments[j].slot.time);
-            cJSON_AddStringToObject(slot_obj, "location", s->assignments[j].slot.location);
-            cJSON_AddItemToObject(sched_obj, s->assignments[j].examID, slot_obj);
-        }
-
-        // Print one object at a time, never accumulating
-        char *json_str = cJSON_PrintUnformatted(sched_obj); // unformatted = smaller output
-        fprintf(f, "%s%s\n", json_str, (i < master_schedule_count - 1) ? "," : "");
-
-        free(json_str);
-        cJSON_Delete(sched_obj); // free immediately after writing
-        
+    cJSON *sched_obj = cJSON_CreateObject();
+    for (int j = 0; j < result_num_exams; j++) {
+        cJSON *slot_obj = cJSON_CreateObject();
+        cJSON_AddStringToObject(slot_obj, "day",      result_schedule[j].slot.day);
+        cJSON_AddStringToObject(slot_obj, "time",     result_schedule[j].slot.time);
+        cJSON_AddStringToObject(slot_obj, "location", result_schedule[j].slot.location);
+        cJSON_AddItemToObject(sched_obj, result_schedule[j].examID, slot_obj);
     }
-    
+
+    char *json_str = cJSON_Print(sched_obj);
+    fprintf(f, "%s\n", json_str);
+    free(json_str);
+    cJSON_Delete(sched_obj);
     fclose(f);
-    printf("Wrote %d schedules to %s\n", master_schedule_count, path);
+
+    printf("Wrote valid schedule to %s\n", path);
 }
 
 /* ─── main ─────────────────────────────────────────────────────── */
@@ -361,7 +343,7 @@ int main(void)
     /* ── generate ──────────────────────────────────────────────── */
     count = 0;
 
-    struct timespec gen_start, gen_end, conflict_end;
+    struct timespec gen_start, gen_end;
     clock_gettime(CLOCK_MONOTONIC, &gen_start);
 
     generate_schedules(exams, num_exams,
@@ -371,33 +353,21 @@ int main(void)
 
     clock_gettime(CLOCK_MONOTONIC, &gen_end);
 
-    /* ── remove conflicts ──────────────────────────────────────── */
-    remove_conflicts();
-    clock_gettime(CLOCK_MONOTONIC, &conflict_end);
-
-    /* ── save results ──────────────────────────────────────────── */
-    save_schedules(save_path);
+    /* ── save result ───────────────────────────────────────────── */
+    save_schedule(save_path);
 
     /* ── timing report ─────────────────────────────────────────── */
-    double gen_time = (gen_end.tv_sec  - gen_start.tv_sec)
-                    + (gen_end.tv_nsec - gen_start.tv_nsec) / 1e9;
-    double rem_time = (conflict_end.tv_sec  - gen_end.tv_sec)
-                    + (conflict_end.tv_nsec - gen_end.tv_nsec) / 1e9;
-    double tot_time = (conflict_end.tv_sec  - gen_start.tv_sec)
-                    + (conflict_end.tv_nsec - gen_start.tv_nsec) / 1e9;
+    double total_time = (gen_end.tv_sec  - gen_start.tv_sec)
+                      + (gen_end.tv_nsec - gen_start.tv_nsec) / 1e9;
 
-    printf("\nGeneration Time: %.2f seconds\n", gen_time);
-    printf("Removal Time:    %.2f seconds\n",   rem_time);
-    printf("Total Time:      %.2f seconds\n",   tot_time);
-    printf("Total schedules generated: %d\n",   count);
-    printf("Valid schedules remaining: %d\n",   master_schedule_count);
+    printf("\nTotal Time:              %.2f seconds\n", total_time);
+    printf("Complete assignments tried: %d\n", count);
+    printf("Valid schedule found:    %s\n", found ? "Yes" : "No");
 
-    printf("\n\n");
-    printf("Freeing Resources; This may take a while...\n");
+    printf("\nFreeing Resources...\n");
+
     /* ── cleanup ───────────────────────────────────────────────── */
-    for (int i = 0; i < master_schedule_count; i++)
-        free(master_schedule_list[i].assignments);
-    free(master_schedule_list);
+    free(result_schedule);
 
     for (int i = 0; i < num_students; i++) {
         for (int j = 0; j < master_student_list[i].num_courses; j++)
@@ -406,7 +376,7 @@ int main(void)
     }
     free(master_student_list);
 
-    for (int i = 0; i < num_exams;    i++) free(exams[i]);
+    for (int i = 0; i < num_exams;     i++) free(exams[i]);
     free(exams);
     for (int i = 0; i < num_locations; i++) free(locations[i]);
     free(locations);
