@@ -1,3 +1,5 @@
+# You can run this file either via terminal or your IDEs play button. ***Either way, you must run this file from the project's root directory.*** For the terminal option, if on Windows enter into the terminal 'py .\codePortion\main.py' or if on macOS / Linux enter 'python3 ./codePortion/main.py'. Remember to run these commands from the project's root directory.
+
 from generate_data import mainGenerate
 from run_algorithm import mainRunAlgorithm
 
