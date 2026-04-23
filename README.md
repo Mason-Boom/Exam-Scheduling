@@ -10,10 +10,9 @@
 
 ## How to run the project?
 
-You will interface with the project entirely through the [main.py](./codePortion/main.py) file in the codePortion folder. This will allow you to create courses, students and locations. Once you've created or otherwise collected your data files, you can load them into any of the 4 algorithms using the same interface. Data files will be automatically placed in theie respective repositories within the Data folder. The algorithms will look for the files from these repositories, so it is important to place all needed data in the correct location.
+You will interface with the project entirely through the [main.py](./codePortion/main.py) file in the codePortion folder. This will allow you to create courses, students and locations. Once you've created or otherwise collected your data files, you can load them into any of the 4 algorithms using the same interface. Data files will be automatically placed in their respective repositories within the Data folder. The algorithms will look for the files from these repositories, so it is important to place all needed data in the correct location.
 
-You can run the `main.py` file by typing into the terminal (from the root directory) `py .\codePortion\main.py` if on Windows or `python3 ./codePortion/main.py` if on Mac/Linux.
-If your IDE allows, the play button on the `main.py` file should also work.
+You can run the 'main.py' file either via terminal or your IDEs play button. ***Either way, you must run 'main.py' from the project's root directory.*** For the terminal option, if on Windows enter into the terminal 'py .\codePortion\main.py' or if on macOS / Linux enter 'python3 ./codePortion/main.py'. Remember to run these commands from the project's root directory.
 
 If you wish to modify any of the algorithm code ensure that you properly name the new binary and place it it in the `~/codePortion/alg_binaries` folder. The proper names are:
 
@@ -41,9 +40,6 @@ When running the program, the user can choose one of three options.
     - JSON file inputs are then required once the executable is run.
 
 3. Exit the Program
-
-***It is very important to run `main.py` from the root directory!***
-
 
 ## Project Description
 The Exam Scheduling Problem is an optimization problem that aims to create a conflict free exam timetable. Our algorithm will consider the following constraints: exam length, student schedules, location, and time for when exams can be held. Since the Exam Scheduling Problem will generate an optimized schedule in nonpolynomial time, it is NP-hard.
