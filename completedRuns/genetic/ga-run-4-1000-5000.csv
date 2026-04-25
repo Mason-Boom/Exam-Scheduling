@@ -1,0 +1,116 @@
+student_count,course_count,location_count,status,total_time_sec,complete_assignments_tried,valid_schedule_found,total_schedules_generated,conflict_free,student_conflicts,time_slots_used,best_fitness,perfect_fitness,checker_student_conflicts,checker_location_conflicts,notes
+4,4,4,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+4,4,8,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+4,4,16,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+4,4,32,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+4,4,64,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+4,4,128,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+4,4,256,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+4,4,512,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+4,4,1024,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+4,4,2048,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+8,4,4,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+8,4,8,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+8,4,16,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+8,4,32,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+8,4,64,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+8,4,128,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+8,4,256,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+8,4,512,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+8,4,1024,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+8,4,2048,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+20,4,4,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+20,4,8,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+20,4,16,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+20,4,32,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+20,4,64,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+20,4,128,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+20,4,256,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+20,4,512,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+20,4,1024,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+20,4,2048,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+40,8,4,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+40,8,8,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+40,8,16,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+40,8,32,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+40,8,64,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+40,8,128,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+40,8,256,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+40,8,512,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+40,8,1024,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+40,8,2048,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+80,16,4,success,0.01,,,2000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+80,16,8,success,0.01,,,2000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+80,16,16,success,0.01,,,2000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+80,16,32,success,0.00,,,1000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+80,16,64,success,0.01,,,2000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+80,16,128,success,0.01,,,2000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+80,16,256,success,0.02,,,4000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+80,16,512,success,0.01,,,2000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+80,16,1024,success,0.01,,,2000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+80,16,2048,success,0.01,,,2000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+160,32,4,success,0.29,,,26000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+160,32,8,success,0.45,,,30000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+160,32,16,success,0.30,,,26000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+160,32,32,success,0.27,,,23000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+160,32,64,success,0.37,,,32000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+160,32,128,success,0.34,,,29000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+160,32,256,success,0.27,,,23000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+160,32,512,success,0.46,,,26000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+160,32,1024,success,0.26,,,21000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+160,32,2048,success,0.20,,,17000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+320,64,4,success,10.53,,,460000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+320,64,8,success,6.01,,,262000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+320,64,16,success,3.18,,,134000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+320,64,32,success,2.20,,,93000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+320,64,64,success,2.04,,,89000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+320,64,128,success,1.87,,,76000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+320,64,256,success,2.34,,,97000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+320,64,512,success,2.15,,,89000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+320,64,1024,success,2.08,,,80000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+320,64,2048,success,2.46,,,100000,True,0,,10000,10000,No student conflicts found!,No location conflicts found!,Perfect fitness achieved
+640,128,8,success,252.21,,,5000000,False,9,,9100,10000,Total student conflicts found: 5,(location conflicts detected — see schedule file),Best fitness 9100 / 10000
+640,128,16,success,252.50,,,5000000,False,4,,9550,10000,Total student conflicts found: 4,(location conflicts detected — see schedule file),Best fitness 9550 / 10000
+640,128,32,success,259.57,,,5000000,False,3,,9650,10000,Total student conflicts found: 3,(location conflicts detected — see schedule file),Best fitness 9650 / 10000
+640,128,64,success,252.52,,,5000000,False,3,,9700,10000,Total student conflicts found: 3,No location conflicts found!,Best fitness 9700 / 10000
+640,128,128,success,257.31,,,5000000,False,3,,9700,10000,Total student conflicts found: 3,No location conflicts found!,Best fitness 9700 / 10000
+640,128,256,success,249.95,,,5000000,False,1,,9900,10000,Total student conflicts found: 1,No location conflicts found!,Best fitness 9900 / 10000
+640,128,512,success,254.67,,,5000000,False,1,,9900,10000,Total student conflicts found: 1,No location conflicts found!,Best fitness 9900 / 10000
+640,128,1024,success,259.55,,,5000000,False,2,,9800,10000,Total student conflicts found: 2,No location conflicts found!,Best fitness 9800 / 10000
+640,128,2048,success,255.31,,,5000000,False,2,,9800,10000,Total student conflicts found: 2,No location conflicts found!,Best fitness 9800 / 10000
+1280,256,16,timeout,>600,,,,,,,,,,,Process killed after 600s
+1280,256,32,timeout,>600,,,,,,,,,,,Process killed after 600s
+1280,256,64,timeout,>600,,,,,,,,,,,Process killed after 600s
+1280,256,128,timeout,>600,,,,,,,,,,,Process killed after 600s
+1280,256,256,timeout,>600,,,,,,,,,,,Process killed after 600s
+1280,256,512,timeout,>600,,,,,,,,,,,Process killed after 600s
+1280,256,1024,timeout,>600,,,,,,,,,,,Process killed after 600s
+1280,256,2048,timeout,>600,,,,,,,,,,,Process killed after 600s
+2560,512,32,timeout,>600,,,,,,,,,,,Process killed after 600s
+2560,512,64,timeout,>600,,,,,,,,,,,Process killed after 600s
+2560,512,128,timeout,>600,,,,,,,,,,,Process killed after 600s
+2560,512,256,timeout,>600,,,,,,,,,,,Process killed after 600s
+2560,512,512,timeout,>600,,,,,,,,,,,Process killed after 600s
+2560,512,1024,timeout,>600,,,,,,,,,,,Process killed after 600s
+2560,512,2048,timeout,>600,,,,,,,,,,,Process killed after 600s
+5120,1024,64,timeout,>600,,,,,,,,,,,Process killed after 600s
+5120,1024,128,timeout,>600,,,,,,,,,,,Process killed after 600s
+5120,1024,256,timeout,>600,,,,,,,,,,,Process killed after 600s
+5120,1024,512,timeout,>600,,,,,,,,,,,Process killed after 600s
+5120,1024,1024,timeout,>600,,,,,,,,,,,Process killed after 600s
+5120,1024,2048,timeout,>600,,,,,,,,,,,Process killed after 600s
+10240,2048,128,timeout,>600,,,,,,,,,,,Process killed after 600s
+10240,2048,256,timeout,>600,,,,,,,,,,,Process killed after 600s
+10240,2048,512,timeout,>600,,,,,,,,,,,Process killed after 600s
+10240,2048,1024,timeout,>600,,,,,,,,,,,Process killed after 600s
+10240,2048,2048,timeout,>600,,,,,,,,,,,Process killed after 600s
+20480,4096,256,timeout,>600,,,,,,,,,,,Process killed after 600s
+20480,4096,512,timeout,>600,,,,,,,,,,,Process killed after 600s
+20480,4096,1024,timeout,>600,,,,,,,,,,,Process killed after 600s
+20480,4096,2048,timeout,>600,,,,,,,,,,,Process killed after 600s
+40960,8192,512,timeout,>600,,,,,,,,,,,Process killed after 600s
+40960,8192,1024,timeout,>600,,,,,,,,,,,Process killed after 600s
+40960,8192,2048,timeout,>600,,,,,,,,,,,Process killed after 600s
+81920,16384,1024,timeout,>600,,,,,,,,,,,Process killed after 600s
+81920,16384,2048,timeout,>600,,,,,,,,,,,Process killed after 600s
+123840,32768,2048,skipped,,,,,,,,,,,,Missing data files: Students
