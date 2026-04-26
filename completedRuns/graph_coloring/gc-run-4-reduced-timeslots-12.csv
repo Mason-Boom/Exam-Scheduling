@@ -1,0 +1,125 @@
+student_count,course_count,location_count,status,total_time_sec,complete_assignments_tried,valid_schedule_found,total_schedules_generated,conflict_free,student_conflicts,time_slots_used,best_fitness,perfect_fitness,checker_student_conflicts,checker_location_conflicts,notes
+4,4,4,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+4,4,8,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+4,4,16,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+4,4,32,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+4,4,64,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+4,4,128,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+4,4,256,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+4,4,512,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+4,4,1024,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+4,4,2048,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+8,4,4,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+8,4,8,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+8,4,16,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+8,4,32,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+8,4,64,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+8,4,128,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+8,4,256,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+8,4,512,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+8,4,1024,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+8,4,2048,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+20,4,4,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+20,4,8,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+20,4,16,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+20,4,32,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+20,4,64,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+20,4,128,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+20,4,256,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+20,4,512,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+20,4,1024,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+20,4,2048,success,0.0000,,,1,True,0,4/12,,,No student conflicts found!,No location conflicts found!,
+40,8,4,success,0.0000,,,1,True,0,8/12,,,No student conflicts found!,No location conflicts found!,
+40,8,8,success,0.0000,,,1,True,0,8/12,,,No student conflicts found!,No location conflicts found!,
+40,8,16,success,0.0000,,,1,True,0,8/12,,,No student conflicts found!,No location conflicts found!,
+40,8,32,success,0.0000,,,1,True,0,8/12,,,No student conflicts found!,No location conflicts found!,
+40,8,64,success,0.0000,,,1,True,0,8/12,,,No student conflicts found!,No location conflicts found!,
+40,8,128,success,0.0000,,,1,True,0,8/12,,,No student conflicts found!,No location conflicts found!,
+40,8,256,success,0.0000,,,1,True,0,8/12,,,No student conflicts found!,No location conflicts found!,
+40,8,512,success,0.0000,,,1,True,0,8/12,,,No student conflicts found!,No location conflicts found!,
+40,8,1024,success,0.0000,,,1,True,0,8/12,,,No student conflicts found!,No location conflicts found!,
+40,8,2048,success,0.0000,,,1,True,0,8/12,,,No student conflicts found!,No location conflicts found!,
+80,16,4,success,0.0001,,,1,False,3,12/12,,,Total student conflicts found: 3,No location conflicts found!,GC schedule has remaining student conflicts
+80,16,8,success,0.0001,,,1,False,3,12/12,,,Total student conflicts found: 3,No location conflicts found!,GC schedule has remaining student conflicts
+80,16,16,success,0.0001,,,1,False,3,12/12,,,Total student conflicts found: 3,No location conflicts found!,GC schedule has remaining student conflicts
+80,16,32,success,0.0001,,,1,False,3,12/12,,,Total student conflicts found: 3,No location conflicts found!,GC schedule has remaining student conflicts
+80,16,64,success,0.0001,,,1,False,3,12/12,,,Total student conflicts found: 3,No location conflicts found!,GC schedule has remaining student conflicts
+80,16,128,success,0.0001,,,1,False,3,12/12,,,Total student conflicts found: 3,No location conflicts found!,GC schedule has remaining student conflicts
+80,16,256,success,0.0001,,,1,False,3,12/12,,,Total student conflicts found: 3,No location conflicts found!,GC schedule has remaining student conflicts
+80,16,512,success,0.0001,,,1,False,3,12/12,,,Total student conflicts found: 3,No location conflicts found!,GC schedule has remaining student conflicts
+80,16,1024,success,0.0001,,,1,False,3,12/12,,,Total student conflicts found: 3,No location conflicts found!,GC schedule has remaining student conflicts
+80,16,2048,success,0.0001,,,1,False,3,12/12,,,Total student conflicts found: 3,No location conflicts found!,GC schedule has remaining student conflicts
+160,32,4,success,0.0002,,,1,False,7,12/12,,,Total student conflicts found: 7,No location conflicts found!,GC schedule has remaining student conflicts
+160,32,8,success,0.0002,,,1,False,7,12/12,,,Total student conflicts found: 7,No location conflicts found!,GC schedule has remaining student conflicts
+160,32,16,success,0.0002,,,1,False,7,12/12,,,Total student conflicts found: 7,No location conflicts found!,GC schedule has remaining student conflicts
+160,32,32,success,0.0002,,,1,False,7,12/12,,,Total student conflicts found: 7,No location conflicts found!,GC schedule has remaining student conflicts
+160,32,64,success,0.0002,,,1,False,7,12/12,,,Total student conflicts found: 7,No location conflicts found!,GC schedule has remaining student conflicts
+160,32,128,success,0.0002,,,1,False,7,12/12,,,Total student conflicts found: 7,No location conflicts found!,GC schedule has remaining student conflicts
+160,32,256,success,0.0002,,,1,False,7,12/12,,,Total student conflicts found: 7,No location conflicts found!,GC schedule has remaining student conflicts
+160,32,512,success,0.0002,,,1,False,7,12/12,,,Total student conflicts found: 7,No location conflicts found!,GC schedule has remaining student conflicts
+160,32,1024,success,0.0002,,,1,False,7,12/12,,,Total student conflicts found: 7,No location conflicts found!,GC schedule has remaining student conflicts
+160,32,2048,success,0.0002,,,1,False,7,12/12,,,Total student conflicts found: 7,No location conflicts found!,GC schedule has remaining student conflicts
+320,64,4,error,,,,,,,,,,,,"Error: cannot schedule 64 exams into 12 slots x 4 locations = 48 capacity.
+No output file written."
+320,64,8,success,0.0004,,,1,False,17,12/12,,,Total student conflicts found: 17,No location conflicts found!,GC schedule has remaining student conflicts
+320,64,16,success,0.0005,,,1,False,17,12/12,,,Total student conflicts found: 17,No location conflicts found!,GC schedule has remaining student conflicts
+320,64,32,success,0.0004,,,1,False,17,12/12,,,Total student conflicts found: 17,No location conflicts found!,GC schedule has remaining student conflicts
+320,64,64,success,0.0005,,,1,False,17,12/12,,,Total student conflicts found: 17,No location conflicts found!,GC schedule has remaining student conflicts
+320,64,128,success,0.0004,,,1,False,17,12/12,,,Total student conflicts found: 17,No location conflicts found!,GC schedule has remaining student conflicts
+320,64,256,success,0.0004,,,1,False,17,12/12,,,Total student conflicts found: 17,No location conflicts found!,GC schedule has remaining student conflicts
+320,64,512,success,0.0004,,,1,False,17,12/12,,,Total student conflicts found: 17,No location conflicts found!,GC schedule has remaining student conflicts
+320,64,1024,success,0.0005,,,1,False,17,12/12,,,Total student conflicts found: 17,No location conflicts found!,GC schedule has remaining student conflicts
+320,64,2048,success,0.0005,,,1,False,17,12/12,,,Total student conflicts found: 17,No location conflicts found!,GC schedule has remaining student conflicts
+640,128,8,error,,,,,,,,,,,,"Error: cannot schedule 128 exams into 12 slots x 8 locations = 96 capacity.
+No output file written."
+640,128,16,success,0.0013,,,1,False,32,12/12,,,Total student conflicts found: 32,No location conflicts found!,GC schedule has remaining student conflicts
+640,128,32,success,0.0011,,,1,False,32,12/12,,,Total student conflicts found: 32,No location conflicts found!,GC schedule has remaining student conflicts
+640,128,64,success,0.0012,,,1,False,32,12/12,,,Total student conflicts found: 32,No location conflicts found!,GC schedule has remaining student conflicts
+640,128,128,success,0.0012,,,1,False,32,12/12,,,Total student conflicts found: 32,No location conflicts found!,GC schedule has remaining student conflicts
+640,128,256,success,0.0012,,,1,False,32,12/12,,,Total student conflicts found: 32,No location conflicts found!,GC schedule has remaining student conflicts
+640,128,512,success,0.0012,,,1,False,32,12/12,,,Total student conflicts found: 32,No location conflicts found!,GC schedule has remaining student conflicts
+640,128,1024,success,0.0012,,,1,False,32,12/12,,,Total student conflicts found: 32,No location conflicts found!,GC schedule has remaining student conflicts
+640,128,2048,success,0.0012,,,1,False,32,12/12,,,Total student conflicts found: 32,No location conflicts found!,GC schedule has remaining student conflicts
+1280,256,16,error,,,,,,,,,,,,"Error: cannot schedule 256 exams into 12 slots x 16 locations = 192 capacity.
+No output file written."
+1280,256,32,success,0.0034,,,1,False,88,12/12,,,Total student conflicts found: 88,No location conflicts found!,GC schedule has remaining student conflicts
+1280,256,64,success,0.0036,,,1,False,88,12/12,,,Total student conflicts found: 88,No location conflicts found!,GC schedule has remaining student conflicts
+1280,256,128,success,0.0035,,,1,False,88,12/12,,,Total student conflicts found: 88,No location conflicts found!,GC schedule has remaining student conflicts
+1280,256,256,success,0.0034,,,1,False,88,12/12,,,Total student conflicts found: 88,No location conflicts found!,GC schedule has remaining student conflicts
+1280,256,512,success,0.0035,,,1,False,88,12/12,,,Total student conflicts found: 88,No location conflicts found!,GC schedule has remaining student conflicts
+1280,256,1024,success,0.0035,,,1,False,88,12/12,,,Total student conflicts found: 88,No location conflicts found!,GC schedule has remaining student conflicts
+1280,256,2048,success,0.0035,,,1,False,88,12/12,,,Total student conflicts found: 88,No location conflicts found!,GC schedule has remaining student conflicts
+2560,512,32,error,,,,,,,,,,,,"Error: cannot schedule 512 exams into 12 slots x 32 locations = 384 capacity.
+No output file written."
+2560,512,64,success,0.0110,,,1,False,206,12/12,,,Total student conflicts found: 206,No location conflicts found!,GC schedule has remaining student conflicts
+2560,512,128,success,0.0115,,,1,False,206,12/12,,,Total student conflicts found: 206,No location conflicts found!,GC schedule has remaining student conflicts
+2560,512,256,success,0.0111,,,1,False,206,12/12,,,Total student conflicts found: 206,No location conflicts found!,GC schedule has remaining student conflicts
+2560,512,512,success,0.0107,,,1,False,206,12/12,,,Total student conflicts found: 206,No location conflicts found!,GC schedule has remaining student conflicts
+2560,512,1024,success,0.0109,,,1,False,206,12/12,,,Total student conflicts found: 206,No location conflicts found!,GC schedule has remaining student conflicts
+2560,512,2048,success,0.0107,,,1,False,206,12/12,,,Total student conflicts found: 206,No location conflicts found!,GC schedule has remaining student conflicts
+5120,1024,64,error,,,,,,,,,,,,"Error: cannot schedule 1024 exams into 12 slots x 64 locations = 768 capacity.
+No output file written."
+5120,1024,128,success,0.0342,,,1,False,396,12/12,,,Total student conflicts found: 395,No location conflicts found!,GC schedule has remaining student conflicts
+5120,1024,256,success,0.0345,,,1,False,396,12/12,,,Total student conflicts found: 395,No location conflicts found!,GC schedule has remaining student conflicts
+5120,1024,512,success,0.0341,,,1,False,396,12/12,,,Total student conflicts found: 395,No location conflicts found!,GC schedule has remaining student conflicts
+5120,1024,1024,success,0.0347,,,1,False,396,12/12,,,Total student conflicts found: 395,No location conflicts found!,GC schedule has remaining student conflicts
+5120,1024,2048,success,0.0345,,,1,False,396,12/12,,,Total student conflicts found: 395,No location conflicts found!,GC schedule has remaining student conflicts
+10240,2048,128,error,,,,,,,,,,,,"Error: cannot schedule 2048 exams into 12 slots x 128 locations = 1536 capacity.
+No output file written."
+10240,2048,256,success,0.1155,,,1,False,777,12/12,,,Total student conflicts found: 777,No location conflicts found!,GC schedule has remaining student conflicts
+10240,2048,512,success,0.1177,,,1,False,777,12/12,,,Total student conflicts found: 777,No location conflicts found!,GC schedule has remaining student conflicts
+10240,2048,1024,success,0.1162,,,1,False,777,12/12,,,Total student conflicts found: 777,No location conflicts found!,GC schedule has remaining student conflicts
+10240,2048,2048,success,0.1153,,,1,False,777,12/12,,,Total student conflicts found: 777,No location conflicts found!,GC schedule has remaining student conflicts
+20480,4096,256,error,,,,,,,,,,,,"Error: cannot schedule 4096 exams into 12 slots x 256 locations = 3072 capacity.
+No output file written."
+20480,4096,512,success,0.4240,,,1,False,1509,12/12,,,Total student conflicts found: 1508,No location conflicts found!,GC schedule has remaining student conflicts
+20480,4096,1024,success,0.4239,,,1,False,1509,12/12,,,Total student conflicts found: 1508,No location conflicts found!,GC schedule has remaining student conflicts
+20480,4096,2048,success,0.4234,,,1,False,1509,12/12,,,Total student conflicts found: 1508,No location conflicts found!,GC schedule has remaining student conflicts
+40960,8192,512,error,,,,,,,,,,,,"Error: cannot schedule 8192 exams into 12 slots x 512 locations = 6144 capacity.
+No output file written."
+40960,8192,1024,success,1.6982,,,1,False,3227,12/12,,,Total student conflicts found: 3223,No location conflicts found!,GC schedule has remaining student conflicts
+40960,8192,2048,success,1.6907,,,1,False,3227,12/12,,,Total student conflicts found: 3223,No location conflicts found!,GC schedule has remaining student conflicts
+81920,16384,1024,error,,,,,,,,,,,,"Error: cannot schedule 16384 exams into 12 slots x 1024 locations = 12288 capacity.
+No output file written."
+81920,16384,2048,success,6.5447,,,1,False,6364,12/12,,,Total student conflicts found: 6360,No location conflicts found!,GC schedule has remaining student conflicts
+123840,32768,2048,skipped,,,,,,,,,,,,Missing data files: Students
