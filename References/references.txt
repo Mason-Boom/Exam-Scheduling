@@ -1,0 +1,29 @@
+Works Cited
+------------
+Aspnes, James. “BruteForce.” PineWiki, 17 June 2014, 
+    www.cs.yale.edu/homes/aspnes/pinewiki/BruteForce.html.
+“Brute Force Approach and Its Pros and Cons.” 
+    GeeksforGeeks, GeeksforGeeks, 23 July 2025, 
+    www.geeksforgeeks.org/dsa/brute-force-approach-and-its-pros-and-cons/.
+Elen, Abdullah. “A COMPLETE SOLUTION to EXAM SCHEDULING PROBLEM: A CASE STUDY.” 
+    Kutahya Dumlupmar University Institute of Graduate Studies, 
+    Journal of Scientific Reports - A, 14 Oct. 2021, 
+    dergipark.org.tr/en/download/article-file/2025907.
+“Genetic Algorithms.” GeeksforGeeks, GeeksforGeeks, 
+    10 Feb. 2026, www.geeksforgeeks.org/dsa/genetic-algorithms/.
+“Graph Coloring Using Greedy Algorithm.” GeeksforGeeks, GeeksforGeeks, 
+    23 Mar. 2025, www.geeksforgeeks.org/dsa/graph-coloring-set-2-greedy-algorithm/.
+“Greedy Algorithms Tutorial.” GeeksforGeeks, GeeksforGeeks, 
+    22 Jan. 2026, www.geeksforgeeks.org/dsa/greedy-algorithms/.
+“Introduction to Graph Coloring.” GeeksforGeeks, GeeksforGeeks, 
+    23 July 2025, www.geeksforgeeks.org/dsa/graph-coloring-applications/.
+Lemos, Alexandre Rosseto Rosseto. “Genetic Algorithm and Its Practicality in Machine Learning.” 
+    Towards Data Science, 5 Mar. 2025, towardsdatascience.com/genetic-algorithm-6aefd897f1ac/.
+W3Schools. “DSA Greedy Algorithms.” 
+    W3Schools Online Web Tutorials, www.w3schools.com/dsa/dsa_ref_greedy.php.
+
+Artificial Intelligence Use
+------------
+Claude: Used for generating C-based algorithms and the conversion of python algorithms into C
+ChatGPT: Used for inquiry and editing of the used algorithms
+GitHub Copilot: Used for debugging and editing file paths in the algorithms
